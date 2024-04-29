@@ -1,4 +1,4 @@
-name: CI
+name: John's Custom Website Deployment Strategy
 
 on:
   # Runs on pushes targeting the default branch
