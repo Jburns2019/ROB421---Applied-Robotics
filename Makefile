@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := build_website
 main_page := index.html
-blockly_page := /Misty-Blockly/misty_blockly.html
-python_page := /Misty-Python/misty_python.html
+blockly_page := .\Misty-Blockly\misty_blockly.html
+python_page := .\Misty-Python\misty_python.html
 assembly_page := .\Pupper-Assembly\pupper_assembly.html
 racing_page := .\Pupper-Racing\pupper_racing.html
 eot_page := .\Pupper-EOT-Project\pupper_eot_project.html
