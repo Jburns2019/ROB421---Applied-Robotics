@@ -14,3 +14,14 @@ h1 {
 p {
     color: #19EFE7;
 }
+
+button.expandable:hover {
+    background-color: #555;
+    color: #FFF
+}
+
+div.hidable_panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+}
