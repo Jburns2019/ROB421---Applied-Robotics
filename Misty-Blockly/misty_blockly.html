@@ -4,8 +4,7 @@
       <title>Team 1 - Misty Blockly</title>
       
       <link rel="stylesheet" type="text/css" href="../page_style.css">
-      <style>
-      </style>
+      <script src="scripts.js"></script>
     </head>
 
   <body>
@@ -19,12 +18,13 @@
     <a href="../index.html">Main Website</a>
 
     <h1>Misty-Blockly</h1>
-    <p>John's Individual Task</p>
-    <video controls="controls" width="400" height="300" name="Video Name">
-      <source src="Johns_Individual_Assignment.mp4">
-      Your browser does not support the video tag.
-    </video>
-
+    <button type="button" class="expandable">John's Individual Task</button>
+    <div class="hidable_panel">
+      <video controls="controls" width="400" height="300" name="Video Name">
+        <source src="Johns_Individual_Assignment.mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
     <br>
 
     <p>1st Task</p>
@@ -33,10 +33,10 @@
 
     <p>2nd Task</p>
     
-
     <br>
 
     <p>3rd Task</p>
     
+    <script>make_all_expandables_expandable()</script>
   </body>
 </html>
