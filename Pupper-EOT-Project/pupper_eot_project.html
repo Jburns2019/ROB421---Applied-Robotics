@@ -24,8 +24,41 @@
       <p>
         Description.
       </p>
-      <object data="Project Pitch.pdf" type="application/pdf" width="100%" height="500"></object>
-        <!-- <p>Unable to display PDF file. <a href="/Pupper-EOT-Project/Project Pitch.pdf">Download</a> instead.</p> -->
+
+      <button onclick="toggle_visibility('proposal_presentation', this)" class="expandable plus"> Proposal Presentation</button>
+      <div class="hidden btn_group" id="proposal_presentation">
+        <p>
+          Description.
+        </p>
+        <object data="Project Pitch.pdf" type="application/pdf" width="100%" height="500"></object>
+      </div>
+
+      <button onclick="toggle_visibility('proposal_videos', this)" class="expandable plus"> Proposal Videos</button>
+      <div class="hidden btn_group" id="proposal_videos">
+        <p>
+          Description.
+        </p>
+
+        <p>
+          Description.
+        </p>
+        <video controls="controls">
+          <source src="keyboard_simulation_demo.mp4">
+        </video>
+        <p>
+          Description.
+        </p>
+        <video controls="controls">
+          <source src="slam_simulation_demo.mp4">
+        </video>
+        <p>
+          Description.
+        </p>
+        <video controls="controls">
+          <source src="loading_screen.mp4">
+        </video>
+      </div>
+
     </div>
 
     <button onclick="toggle_visibility('Demo_0', this)" class="expandable plus"> Hello World Demo</button>
