@@ -4,8 +4,7 @@
       <title>Team 1 - Misty Python</title>
       
       <link rel="stylesheet" type="text/css" href="../page_style.css">
-      <style>
-      </style>
+      <script src="../scripts.js"></script>
     </head>
 
   <body>
@@ -19,43 +18,85 @@
     <a href="../index.html">Main Website</a>
 
     <h1>Misty-Python</h1>
-    <p>John's Individual Task</p>
-    <video controls="controls" width="400" height="300" name="Video Name">
-      <source src="Inidividual_Video_smaller.mp4">
-      Your browser does not support the video tag.
-    </video>
+    <button onclick="toggle_visibility('Individual_Assignments', this)" class="expandable plus"> Individual Assignments</button>
+    <div class="hidden btn_group" id="Individual_Assignments">
+      <p>
+        Individual Tasks.
+      </p>
+
+      <button onclick="toggle_visibility('Johns_Individual_Assignment', this)" class="expandable plus"> John's Individual Task Video</button>
+      <div class="hidden btn_group" id="Johns_Individual_Assignment">
+        <p>Considering Misty's iffy movement and limited capabilities within blockly. I went with moving to </p>
+        <video controls="controls">
+          <source src="Johns_Individual_Assignment.mp4">
+        </video>
+      </div>
+
+      <button onclick="toggle_visibility('Hendys_Individual_Assignment', this)" class="expandable plus"> Hendy's Individual Task Video</button>
+      <div class="hidden btn_group" id="Hendys_Individual_Assignment">
+        <p>Description.</p>
+        <video controls="controls">
+          <!-- <source src="Johns_Individual_Assignment.mp4"> -->
+        </video>
+      </div>
+
+      <button onclick="toggle_visibility('Tims_Individual_Assignment', this)" class="expandable plus"> Tim's Individual Task Video</button>
+      <div class="hidden btn_group" id="Tims_Individual_Assignment">
+        <p>Description</p>
+        <video controls="controls">
+          <!-- <source src="Johns_Individual_Assignment.mp4"> -->
+        </video>
+      </div>
+
+      <button onclick="toggle_visibility('Daniels_Individual_Assignment', this)" class="expandable plus"> Daniel's Individual Task Video</button>
+      <div class="hidden btn_group" id="Daniels_Individual_Assignment">
+        <p>Description</p>
+        <video controls="controls">
+          <!-- <source src="Johns_Individual_Assignment.mp4"> -->
+        </video>
+      </div>
+    </div>
 
     <br>
 
-    <p>1st Task</p>
-    <video controls="controls" width="400" height="300" name="Video Name">
-      <source src="1st_Task.mov">
-      Your browser does not support the video tag.
-    </video>
-    <br>
+    <button onclick="toggle_visibility('Group_Tasks', this)" class="expandable plus"> Group Tasks</button>
+    <div class="hidden btn_group" id="Group_Tasks">
+      <p>
+        Group Tasks.
+      </p>
 
-    <p>2nd Task</p>
-    <video controls="controls" width="400" height="300" name="Video Name">
-      <source src="2nd_Task.mov">
-      Your browser does not support the video tag.
-    </video>
+      <button onclick="toggle_visibility('Task_1', this)" class="expandable plus"> Task 1</button>
+      <div class="hidden btn_group" id="Task_1">
+        <p>Task 1 Description.</p>
+        <video controls="controls">
+          <source src="1st_Task.mov">
+        </video>
+      </div>
 
-    <br>
+      <button onclick="toggle_visibility('Task_2', this)" class="expandable plus"> Task 2</button>
+      <div class="hidden btn_group" id="Task_2">
+        <p>Task 2 Description.</p>
+        <video controls="controls">
+          <source src="2nd_Task.mov">
+        </video>
+      </div>
 
-    <p>3rd Task Part a</p>
-    <video controls="controls" width="400" height="300" name="Video Name">
-      <source src="3rd_Task.mov">
-      Your browser does not support the video tag.
-    </video>
+      <button onclick="toggle_visibility('Task_3', this)" class="expandable plus"> Task 3a</button>
+      <div class="hidden btn_group" id="Task_3">
+        <p>Task 3a Description.</p>
+        <video controls="controls">
+          <source src="3rd_Task.mov">
+        </video>
+      </div>
 
-    <br>
-
-    <p>3rd Task Part b</p>
-    <video controls="controls" width="400" height="300" name="Video Name">
-      <source src="4th_Task.mov">
-      Your browser does not support the video tag.
-    </video>
-
+      <button onclick="toggle_visibility('Task_4', this)" class="expandable plus"> Task 3b</button>
+      <div class="hidden btn_group" id="Task_4">
+        <p>Task 4b Description.</p>
+        <video controls="controls">
+          <source src="4th_Task.mov">
+        </video>
+      </div>
+    </div>
     <br>
   </body>
 </html>
