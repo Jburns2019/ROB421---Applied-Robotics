@@ -5,12 +5,15 @@ python_page := .\Misty-Python\misty_python.html
 assembly_page := .\Pupper-Assembly\pupper_assembly.html
 racing_page := .\Pupper-Racing\pupper_racing.html
 eot_page := .\Pupper-EOT-Project\pupper_eot_project.html
+css := page_style.css
+js := scripts.js
 
 #For John.
 build_website:
 	git add ${main_page}
 	git add ${blockly_page} ${python_page}
 	git add ${assembly_page} ${racing_page} ${eot_page}
+	git add ${css} ${js}
 	git commit -m "Update website."
 	git pull
 	git push
