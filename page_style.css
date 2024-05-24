@@ -42,6 +42,10 @@ img {
     height: "600"
 }
 
+div.btn_group p {
+    cursor: pointer;
+    display: block;
+}
 div.btn_group button {
     cursor: pointer;
     display: block;
