@@ -10,13 +10,25 @@
   <body>
     <header>
       <div class="a">
-        <h1 style="color: red">End of Term Project: SLAM</h1>
+        <h1>End of Term Project: SLAM</h1>
       </div>
       
     </header>
 
     <a href="../index.html">Main Website</a>
 
+    <button onclick="toggle_visibility('Proposal', this)" class="expandable plus"> Proposal</button>
+    <div class="hidden btn_group" id="Proposal">
+    </div>
 
+    <br>
+
+    <button onclick="toggle_visibility('Demo_1', this)" class="expandable plus"> Update Demo 1</button>
+    <div class="hidden btn_group" id="Demo_1">
+    </div>
+
+    <button onclick="toggle_visibility('Demo_2', this)" class="expandable plus"> Update Demo 2</button>
+    <div class="hidden btn_group" id="Demo_2">
+    </div>
   </body>
 </html>

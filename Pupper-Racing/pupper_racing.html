@@ -10,7 +10,7 @@
   <body>
     <header>
       <div class="a">
-        <h1 style="color: red">Moving a Quadruped</h1>
+        <h1>Moving a Quadruped</h1>
       </div>
       
     </header>
@@ -18,18 +18,22 @@
     <a href="../index.html">Main Website</a>
 
     <h1>Pupper-Race</h1>
-    <p>1st Task</p>
-    <video controls="controls" width="400" height="300" name="Video Name">
-      <source src="servo_movement.mov">
-      Your browser does not support the video tag.
-    </video>
+    <p>
+      Description.
+    </p>
+    <button onclick="toggle_visibility('Task_1', this)" class="expandable plus"> Task 1</button>
+    <div class="hidden btn_group" id="Task_1">
+      <p>Description.</p>
+      <video controls="controls">
+        <source src="servo_movement.mov">
+      </video>
+    </div>
 
-    <br>
-
-    <p>2nd Task</p>
-    <video controls="controls" width="400" height="300" name="Video Name">
-      <source src="race.mov">
-      Your browser does not support the video tag.
-    </video>
-  </body>
+    <button onclick="toggle_visibility('Task_2', this)" class="expandable plus"> Task 2</button>
+    <div class="hidden btn_group" id="Task_2">
+      <p>Description.</p>
+      <video controls="controls">
+        <source src="race.mov">
+      </video>
+    </div>
 </html>

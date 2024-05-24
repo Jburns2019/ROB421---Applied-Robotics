@@ -37,12 +37,22 @@ video {
     width: "1000";
     height: "600"
 }
+img {
+    width: "1000";
+    height: "600"
+}
 
 div.btn_group button {
     cursor: pointer;
     display: block;
 }
 div.btn_group video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+div.btn_group img {
     display: block;
     margin-left: auto;
     margin-right: auto;

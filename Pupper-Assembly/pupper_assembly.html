@@ -10,7 +10,7 @@
   <body>
     <header>
       <div class="a">
-        <h1 style="color: red">Assembling Mangdang's Mini-Pupper 1</h1>
+        <h1>Assembling Mangdang's Mini-Pupper 1</h1>
       </div>
       
     </header>
@@ -18,16 +18,21 @@
     <a href="../index.html">Main Website</a>
 
     <h1>Pupper-Assembly</h1>
-    <p>Demo Video of Working Pupper</p>
-    <video controls="controls" width="400" height="300" name="Video Name">
-      <source src="Pupper-Controller-Demo.mp4">
-      Your browser does not support the video tag.
-    </video>
+    <p>
+      Description.
+    </p>
+    <button onclick="toggle_visibility('Assembly_Image', this)" class="expandable plus"> Completed Pupper Image</button>
+    <div class="hidden btn_group" id="Assembly_Image">
+      <p>Description.</p>
+      <img src="Pupper.jpg">
+    </div>
 
-    <br>
-
-    <p>Completed Pupper</p>
-    <img src="Pupper.jpg" alt="Completed Pupper" width="400" height="300">
-    
+    <button onclick="toggle_visibility('Working_Demo', this)" class="expandable plus"> Demo Video of Working Pupper</button>
+    <div class="hidden btn_group" id="Working_Demo">
+      <p>Description.</p>
+      <video controls="controls">
+        <source src="Pupper-Controller-Demo.mp4">
+      </video>
+    </div>
   </body>
 </html>
