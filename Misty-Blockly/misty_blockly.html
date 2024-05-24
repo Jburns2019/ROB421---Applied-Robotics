@@ -4,13 +4,13 @@
       <title>Team 1 - Misty Blockly</title>
       
       <link rel="stylesheet" type="text/css" href="../page_style.css">
-      <script src="scripts.js"></script>
+      <script src="../scripts.js"></script>
     </head>
 
   <body>
     <header>
       <div class="a">
-        <h1 style="color: red">Visual Programming on a MistyRobotics Misty-bot</h1>
+        <h1>Visual Programming on a MistyRobotics Misty-bot</h1>
       </div>
       
     </header>
@@ -18,25 +18,76 @@
     <a href="../index.html">Main Website</a>
 
     <h1>Misty-Blockly</h1>
-    <button type="button" class="expandable">John's Individual Task</button>
-    <div class="hidable_panel">
-      <video controls="controls" width="400" height="300" name="Video Name">
-        <source src="Johns_Individual_Assignment.mp4">
-        Your browser does not support the video tag.
-      </video>
+    <button onclick="toggle_visibility('Individual_Assignments', this)" class="expandable plus"> Individual Assignments</button>
+    <div class="hidden btn_group" id="Individual_Assignments">
+      <p>
+        Individual Tasks.
+      </p>
+
+      <button onclick="toggle_visibility('Johns_Individual_Assignment', this)" class="expandable plus"> John's Individual Task Video</button>
+      <div class="hidden btn_group" id="Johns_Individual_Assignment">
+        <p>Considering Misty's iffy movement and limited capabilities within blockly. I went with moving to </p>
+        <video controls="controls">
+          <source src="Johns_Individual_Assignment.mp4">
+        </video>
+      </div>
+
+      <button onclick="toggle_visibility('Hendys_Individual_Assignment', this)" class="expandable plus"> Hendy's Individual Task Video</button>
+      <div class="hidden btn_group" id="Hendys_Individual_Assignment">
+        <p>Description.</p>
+        <video controls="controls">
+          <!-- <source src="Johns_Individual_Assignment.mp4"> -->
+        </video>
+      </div>
+
+      <button onclick="toggle_visibility('Tims_Individual_Assignment', this)" class="expandable plus"> Tim's Individual Task Video</button>
+      <div class="hidden btn_group" id="Tims_Individual_Assignment">
+        <p>Description</p>
+        <video controls="controls">
+          <!-- <source src="Johns_Individual_Assignment.mp4"> -->
+        </video>
+      </div>
+
+      <button onclick="toggle_visibility('Daniels_Individual_Assignment', this)" class="expandable plus"> Daniel's Individual Task Video</button>
+      <div class="hidden btn_group" id="Daniels_Individual_Assignment">
+        <p>Description</p>
+        <video controls="controls">
+          <!-- <source src="Johns_Individual_Assignment.mp4"> -->
+        </video>
+      </div>
     </div>
-    <br>
-
-    <p>1st Task</p>
     
     <br>
 
-    <p>2nd Task</p>
-    
-    <br>
+    <button onclick="toggle_visibility('Group_Tasks', this)" class="expandable plus"> Group Tasks</button>
+    <div class="hidden btn_group" id="Group_Tasks">
+      <p>
+        Group Tasks.
+      </p>
 
-    <p>3rd Task</p>
-    
-    <script>make_all_expandables_expandable()</script>
+      <button onclick="toggle_visibility('Task_1', this)" class="expandable plus"> Task 1</button>
+      <div class="hidden btn_group" id="Task_1">
+        <p>Task 1 Description.</p>
+        <video controls="controls">
+          <!-- <source src="Task_1.mp4"> -->
+        </video>
+      </div>
+
+      <button onclick="toggle_visibility('Task_2', this)" class="expandable plus"> Task 2</button>
+      <div class="hidden btn_group" id="Task_2">
+        <p>Task 2 Description.</p>
+        <video controls="controls">
+          <!-- <source src="Task_2.mp4"> -->
+        </video>
+      </div>
+
+      <button onclick="toggle_visibility('Task_3', this)" class="expandable plus"> Task 3</button>
+      <div class="hidden btn_group" id="Task_3">
+        <p>Task 3 Description.</p>
+        <video controls="controls">
+          <!-- <source src="Task_3.mp4"> -->
+        </video>
+      </div>
+      </div>
   </body>
 </html>

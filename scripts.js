@@ -1,15 +1,5 @@
-function make_all_expandables_expandable() {
-    var acc = document.getElementsByClassName("expandable");
-
-    for (var i = 0; i < acc.length; i++) {
-        acc[i].onclick = function() {
-            this.classList.toggle("active");
-            
-            var panel = this.nextElementSibling;
-            if (panel.style.maxHeight)
-                panel.style.maxHeight = null
-            else
-                panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-    }
+function toggle_visibility(id_name, button) {
+    document.getElementById(id_name).classList.toggle('hidden')
+    button.classList.toggle('plus')
+    button.classList.toggle('minus')
 }

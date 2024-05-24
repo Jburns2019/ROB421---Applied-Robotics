@@ -1,26 +1,67 @@
-div.a {
+:root {
+    --bg_color: black;
+    --title_color: red;
+    --text_color: #19EFE7;
+    --hyper_color: #B7992A;
+    --active_button_color: #FFF;
+    --active_button_bg_color: #555;
+}
+
+div.a h1 {
     text-align: center;
+    color: var(--title_color);
 }
-body { 
-    background-color: #000000;
-    color: #B7992A;
+
+body {
+    background-color: var(--bg_color);
+    color: var(--hyper_color);
+    line-height: 1;
 }
+
 a {
-    color: #B7992A;
+    color: var(--hyper_color);
 }
 h1 {
-    color: #19EFE7;
+    color: var(--text_color);
 }
 p {
-    color: #19EFE7;
+    color: var(--text_color);
+}
+button {
+    cursor: pointer;
+    text-align: left;
+    background-color: var(--active_button_bg_color);
+    color: var(--text_color);
+}
+video {
+    width: "1000";
+    height: "600"
+}
+
+div.btn_group button {
+    cursor: pointer;
+    display: block;
+}
+div.btn_group video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 }
 
 button.expandable:hover {
-    background-color: #555;
-    color: #FFF
+    background-color: var(--active_button_bg_color);
+    color: var(--active_button_color)
 }
 
-div.hidable_panel {
+.plus:before {
+    content: '\2B9A';
+}
+.minus:before {
+    content: '\2B9B';
+}
+
+.hidden {
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s ease-out;
