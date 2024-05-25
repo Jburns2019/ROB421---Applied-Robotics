@@ -21,15 +21,30 @@
     <button onclick="toggle_visibility('Individual_Assignments', this)" class="expandable plus"> Individual Assignments</button>
     <div class="hidden btn_group" id="Individual_Assignments">
       <p>
-        Individual Tasks.
+        Although group projects are great for getting a general understanding of topics. It is during the individual assignments that people
+        expand on what is interesting to them.<br>
+
+        <br>
+
+        The prompt for the individual assignments is as follows:<br>
+        For this first artifact, you individually must propose something you want to implement and video-record by controlling the Misty II
+        robot with the Blockly programming method. Your artifact should not be identical to anything from the team assignment or anyone else's
+        individual artifact in the class; use this opportunity to try something out with the Misty robot that interests you.
       </p>
+      <br>
 
       <button onclick="toggle_visibility('Johns_Individual_Assignment', this)" class="expandable plus"> John's Individual Task Video</button>
       <div class="hidden btn_group" id="Johns_Individual_Assignment">
-        <p>Considering Misty's iffy movement and limited capabilities within blockly. I went with moving to </p>
+        <p>
+          Considering Misty's iffy movement and limited capabilities within blockly. I went with arm/head movement while misty plays a song.
+        </p>
         <video controls="controls">
           <source src="Johns_Individual_Assignment.mp4">
         </video>
+        <p>
+          Recording the song took more space than I thought it would which is why the video is so compressed.
+        </p>
+        <br>
       </div>
 
       <button onclick="toggle_visibility('Hendys_Individual_Assignment', this)" class="expandable plus"> Hendy's Individual Task Video</button>
@@ -62,12 +77,41 @@
     <button onclick="toggle_visibility('Group_Tasks', this)" class="expandable plus"> Group Tasks</button>
     <div class="hidden btn_group" id="Group_Tasks">
       <p>
-        Group Tasks.
+        Just like Minecraft. Robotics is better together.
       </p>
+      <br>
 
       <button onclick="toggle_visibility('Task_1', this)" class="expandable plus"> Task 1</button>
       <div class="hidden btn_group" id="Task_1">
-        <p>Task 1 Description.</p>
+        <p>
+          Task 1 was the introduction to MistyRobotics. This was also an exposure to how tempermental the Misty Robots can be. <br>
+
+          <br>
+
+          After reading <a href="https://lessons.mistyrobotics.com/blockly/blockly-lessons/lesson-1-movement">Blockly Lesson 1</a> we were to implement the following promt.<br>
+          Assume that Misty wants to cross a “busy street.” Using each type of robot movement (arm, head, drive) at least once, program Misty to
+          cross the street in an expressive way. Assume it takes Misty 6 seconds to cross the street at velocity 20.<br>
+
+          <br>
+
+          After reading <a href="https://lessons.mistyrobotics.com/blockly/blockly-lessons/lesson-2-voice-and-sound">Blockly Lesson 2</a> we were to implement the following promt.<br>
+          While expressive motion is helpful, sometimes being verbal can add to an interaction! Accordingly, have Misty say something as it crosses
+          the street (school-appropriate, please!). This prompt is open-ended, so try to create a story with your program! For example, did Misty almost get hit by a car?
+          Did Misty decide to thank cars that stopped?<br>
+
+          <br>
+
+          After reading <a href="https://lessons.mistyrobotics.com/blockly/blockly-lessons/lesson-3-expressions">Blockly Lesson 3</a> we were to implement the following promt.<br>
+          Now let's add some sound once Misty finishes its walk, as well as some warning lights! We will do this as follows.
+          <ol>
+            <li>
+                Add a completion sound once Misty finishes crossing the street (again, school-appropriate, please). You can either upload your own sound OR use one of the
+                pre-installed sounds available with the robot.
+              </li>
+            <li>When Misty is moving, make Misty flash a Red LED, and when Misty finishes crossing, have Misty display a green LED.</li>
+          </ol>
+        </p>
+        
         <video controls="controls">
           <source src="Task_1.mov">
         </video>
@@ -75,18 +119,85 @@
 
       <button onclick="toggle_visibility('Task_2', this)" class="expandable plus"> Task 2</button>
       <div class="hidden btn_group" id="Task_2">
-        <p>Task 2 Description.</p>
+        <p>
+          Task 2 was the most challenging of the 3 tasks. Misty's movement may be tempermental, but the time of flight sensors are so much worse. It took many attempts to
+          record the video below.<br>
+
+          <br>
+
+          After reading <a href="https://lessons.mistyrobotics.com/blockly/blockly-lessons/lesson-5-events">Blockly Lesson 5</a> we were to implement the following prompt.<br>
+          Implement an event that allows Misty to stop before hitting any object. Misty should sense nearby objects and acknowledge a close call by doing the
+          following two things:
+        </p>
+        <ol>
+          <li>Verbally warn that it is too close to an object.</li>
+          <li>Move back or stop to avoid hitting the object.</li>
+        </ol>
+
+        <br>
+
+        <p>
+          Implement an event that will warn any human passer-by that the robot is heading toward them. 
+        </p>
+        <ol>
+          <li>You can use either object or face detection for this task! The distance the teaching team found to work for face detection was about 2.8 meters.</li>
+          <li>Misty should verbally warn the detected person of its approach.</li>
+        </ol>
+
+        <br>
+
+        <p>
+          Implement an event that will make Misty move in a desired direction.<br>
+          To do this part of the task, have Misty respond to the touch sensors in its head.<br>
+        </p>
+        <ul>
+          <li>If the left side of the head is pressed, have Misty move to the left.</li>
+          <li>If the right side is touched, have Misty move to the right.</li>
+          <li>If the chin is touched, have Misty move forward.</li>
+        </ul>
+
+        <p>
+          To indicate the direction of movement have Misty either say that it is moving in that direction OR signal with an LED light of your choosing that corresponds to that direction.<br>
+          
+          <br>
+          
+          You should have Misty change expressions as well, depending on the direction of travel AND events like Misty stopping!
+        </p>
         <video controls="controls">
-          <source src="Task_2.mp4">
+          <source src="Task_3.mp4">
         </video>
+        <p>
+          Our team noticed that the oporational range was often between 1 meters and 1.5 meters. Further distances often resulted in errors or no readings at all.
+          It should be noted that this video needed to be rerecorded and thus due to time constraints did not show the chin/head responses. The code that was checked off has allow
+          3 features implemented.
+        </p>
+        <br>
       </div>
 
       <button onclick="toggle_visibility('Task_3', this)" class="expandable plus"> Task 3</button>
       <div class="hidden btn_group" id="Task_3">
-        <p>Task 3 Description.</p>
+        <p>
+          After completing <a href="https://lessons.mistyrobotics.com/blockly/blockly-lessons/lesson-8-nlp">Blockly Lesson 8</a> we were to implement the following prompt.<br>
+
+          <br>
+
+          Using NLP, you will either make Misty respond to the question “Did I (Misty) do a job?” OR have Misty tell an interactive joke.
+          For the first task option, if the answer is “No,” have Misty perform a set of actions (this is up to you, but options could include acting sad or trying again).
+          For the first option, if the answer is “Yes,” have Misty perform a set of actions (again, up to you, but options could include a witty remark or victory dance).<br>
+          
+          <br>
+          
+          For the second task option, Misty should deliver a joke, observe information about the human onlooker's face or audio, and then do something in response according
+          to the observation. The design of this response is open-ended, but could include options like commenting on the person's reaction, trying to save the joke, or
+          capitalizing on success by telling another similar joke.
+        </p>
         <video controls="controls">
-          <source src="Task_3.mp4">
+          <source src="Task_2.mp4">
         </video>
+        <p>
+          You'll notice that I had to repeat myself. Although a more optimal recording could have been made, this shows the alternative message for if no voice is detected in its recording.
+        </p>
+        <br>
       </div>
     </div>
   </body>

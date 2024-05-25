@@ -1,9 +1,9 @@
 :root {
     --bg_color: black;
     --title_color: red;
-    --text_color: #19EFE7;
+    --text_color: #18d4af;
     --hyper_color: #B7992A;
-    --active_button_color: #FFF;
+    --active_button_color: red;
     --active_button_bg_color: #555;
 }
 
@@ -16,6 +16,8 @@ body {
     background-color: var(--bg_color);
     color: var(--hyper_color);
     line-height: 1;
+    margin: 0px;
+    margin-left: 15px;
 }
 
 a {
@@ -23,9 +25,19 @@ a {
 }
 h1 {
     color: var(--text_color);
+    margin: 10px
 }
 p {
     color: var(--text_color);
+    margin: 0px
+}
+ol {
+    color: var(--text_color);
+    margin: 0px
+}
+ul {
+    color: var(--text_color);
+    margin: 0px
 }
 button {
     cursor: pointer;
@@ -43,7 +55,6 @@ img {
 }
 
 div.btn_group p {
-    cursor: pointer;
     display: block;
 }
 div.btn_group button {
@@ -79,4 +90,9 @@ button.expandable:hover {
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s ease-out;
+}
+
+.tab { 
+    display:inline-block; 
+    margin-left: 40px; 
 }
