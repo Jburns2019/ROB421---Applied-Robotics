@@ -21,12 +21,28 @@
     <button onclick="toggle_visibility('Individual_Assignments', this)" class="expandable plus"> Individual Assignments</button>
     <div class="hidden btn_group" id="Individual_Assignments">
       <p>
-        Individual Tasks.
+        The prompt for the individual assignments is as follows:<br>
+        For this artifact, you individually must propose something you want to implement and video-record by controlling the Misty II robot
+        with the Python programming method. Your artifact should not be identical to anything from the team assignment or anyone else's
+        individual artifact in the class; use this opportunity to try something out with the Misty robot that interests you.<br>
       </p>
+
+      <br>
 
       <button onclick="toggle_visibility('Johns_Individual_Assignment', this)" class="expandable plus"> John's Individual Task Video</button>
       <div class="hidden btn_group" id="Johns_Individual_Assignment">
-        <p>Considering Misty's iffy movement and limited capabilities within blockly. I went with moving to </p>
+        <p>
+          Misty Python allows for more control, but more control still does not fix the movement hardware problems. Although I initially
+          wanted to make something like the naive exploration of a roomba. I eventually scrapped the idea and pursued something more creative.
+          Opporating under the assumption that the misty bot's face would allow picture updates, I started working on a chess game.
+          As using my computer for partial processing was acceptable, I planned to use Misty for NLP, display, and speach interaction.<br>
+
+          <br>
+
+          Unfortunately, images could not be uploaded to misty's face. This was definitely something I should have checked before on the chess
+          simulation over the weekend. The chess game is capable of 2 autonomous players, 1 autonomous to 1 manual player, and 2 manual players.
+          The chess board is interacted with by speech and visualized on the computer screen.
+        </p>
         <video controls="controls">
           <source src="Johns_Individual_Assignment.mp4">
         </video>
@@ -62,12 +78,47 @@
     <button onclick="toggle_visibility('Group_Tasks', this)" class="expandable plus"> Group Tasks</button>
     <div class="hidden btn_group" id="Group_Tasks">
       <p>
-        Group Tasks.
+        A return to Misty, but with Python instead of Visual Programming. This was intended as a first exposure of Python to robotics.
       </p>
+
+      <br>
 
       <button onclick="toggle_visibility('Task_1', this)" class="expandable plus"> Task 1</button>
       <div class="hidden btn_group" id="Task_1">
-        <p>Task 1 Description.</p>
+        <p>
+          We were to implement the following prompts.<br>
+
+          <br>
+          
+          Using the same “busy street” scenario, make Misty move forward for 5 seconds, turn around, wait 3 seconds, and return to
+          their starting position. As you would when crossing the road (hopefully) make sure that Misty also looks both ways when
+          crossing the road, as well as uses their arms movement at least once. Sometimes Misty will have trouble moving in one direction,
+          so if you are having trouble with Misty moving just switch directions.<br>
+
+          <br>
+
+          To the previous code you created (Misty crossing the road), we will now add a way for Misty to communicate with others and signal
+          when it is walking or stopped. In the robotics world this is the bare minimum you should implement on a robot if it is going to
+          interact with humans in any way!
+        </p>
+        <ol>
+          <li>
+            Have Misty say something using the speak command! This can be anything you want to be creative with
+            it (school-appropriate, please!).
+          </li>
+          <li>
+            Have Misty signal when it stops by displaying a red light and green when Misty is moving. You can assume that when Misty
+            is turning the LED will remain green.
+          </li>
+        </ol>
+
+        <br>
+
+        <p>
+          Now let’s have Misty display a new pair of eyes that fit the scenario you put Misty in! For example, if it was Misty's
+          first time crossing the road they might be excited and happy!
+        </p>
+
         <video controls="controls">
           <source src="1st_Task.mov">
         </video>
@@ -75,23 +126,62 @@
 
       <button onclick="toggle_visibility('Task_2', this)" class="expandable plus"> Task 2</button>
       <div class="hidden btn_group" id="Task_2">
-        <p>Task 2 Description.</p>
+        <p>Create a function that makes misty stop when the bumpers are detected.</p>
+        <ul>
+          <li>If the front bumpers are press make Misty swing their arms up!</li>
+          <li>If the back bumpers are pressed make Misty swing their arms down.</li>
+        </ul>
+
+        <br>
+        
+        <p>Create a function that makes Misty move when the head sensors are pressed and correlate the movement with an LED color.</p>
+        <ul>
+          <li>If the front sensors are pressed Misty will move forward.</li>
+          <li>If the left sensors are pressed Misty will move forward and to the left.</li>
+          <li>If the right sensors are pressed Misty will move forward and to the right.</li>
+        </ul>
+
+        <br>
+
+        <p>Create a function that is able to detect people.</p>
+        <ul>
+          <li>Have Misty detect people using object detection! Once Misty spots a person they should act (i.e., wave, say something, stop)</li>
+        </ul>
+
+        <br>
+
         <video controls="controls">
           <source src="2nd_Task.mov">
         </video>
       </div>
 
-      <button onclick="toggle_visibility('Task_3', this)" class="expandable plus"> Task 3a</button>
+      <button onclick="toggle_visibility('Task_3', this)" class="expandable plus"> Task 3</button>
       <div class="hidden btn_group" id="Task_3">
-        <p>Task 3a Description.</p>
-        <video controls="controls">
-          <source src="3rd_Task.mov">
-        </video>
-      </div>
+        <p>Write a new script (make sure you save your old one) that covers one of the following:</p>
+          <ul>
+            <li>
+              Create a conversation based on a topic with Misty. You will ask someone from a different team to have a
+              conversation with your Misty, so make sure that Misty can direct the conversation. The topic is for you to decide!
+            </li>
+          </ul>
 
-      <button onclick="toggle_visibility('Task_4', this)" class="expandable plus"> Task 3b</button>
-      <div class="hidden btn_group" id="Task_4">
-        <p>Task 3b Description.</p>
+          <br>
+
+          <video controls="controls">
+            <source src="3rd_Task.mov">
+          </video>
+
+          <ul>
+            <li>
+              Create a very simple/short crowd work comedy show.<br>
+              You will need a topic for your show. For example, being in college, surviving finals week. You will present
+              this show to another team, so make sure your Misty can lead towards the answers
+              you need for Misty to reply. Keep it School-appropriate, please!
+            </li>
+          </ul>
+          
+        <br>
+
         <video controls="controls">
           <source src="4th_Task.mov">
         </video>

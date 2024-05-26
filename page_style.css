@@ -45,10 +45,6 @@ button {
     background-color: var(--active_button_bg_color);
     color: var(--text_color);
 }
-video {
-    width: "1000";
-    height: "600"
-}
 img {
     width: "1000";
     height: "600"
