@@ -88,6 +88,10 @@ button.expandable:hover {
     transition: max-height 1s ease-out;
 }
 
+.nested {
+    list-style-type: lower-alpha;
+}
+
 .tab { 
     display:inline-block; 
     margin-left: 40px; 

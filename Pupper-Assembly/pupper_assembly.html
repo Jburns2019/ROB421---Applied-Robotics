@@ -19,17 +19,91 @@
 
     <h1>Pupper-Assembly</h1>
     <p>
-      Description.
+      The mini-puppers are a step in a completely different direction of the Misty II bots.<br>
+      The Misty bots run on tracks, the puppers are quadruped.<br>
+      The Misty bot code is closed to the public with no transparency and no chance for improvement or adjustment. The mini-pupper code is open source
+      and the development team is easily accessible via their discord.<br>
+      The Misty bot uses a beginner safety first approach to robotics interaction. You can and are encouraged to experiment as much as you like with the
+      mini-puppers.<br>
+
+      <br>
+
+      A part of this do it yourself approach is that the puppers are shipped in parts. We needed to put them together using the TA guide,
+      <a href="https://minipupperdocs.readthedocs.io/en/latest/guide/Assembly.html">online guide</a>, and
+      and common sense. Although I am not typically a huge fan of putting kits together for school, putting together the puppers yourself is imperitive to
+      future debugging. Servo fails? What is the least number of pieces that need to be removed to replace said servo? What joints control what? A screw fell out,
+      where does it go based on its size and where screws should be. All of these questions will need to be answered at some point in any extended development. <br>
+
+      <br>
+
+      The next part of the process is to setup the software for the pupper. As to be expected with first interactions with such sophisticated software, there is a
+      lot to be taken in. Problems from poking around to hard is to be expected. Luckily MangDang's
+      <a href="https://drive.google.com/drive/folders/1RXu8dGXx3duYmF6jz4DYGml95TujSjsq">prebuilt iso</a>'s make the stakes low.
     </p>
+
+    <br>
+
     <button onclick="toggle_visibility('Assembly_Image', this)" class="expandable plus"> Completed Pupper Image</button>
     <div class="hidden btn_group" id="Assembly_Image">
-      <p>Description.</p>
+      <p>
+        The pupper was the first robot that we were able to take home with us. This massively increased the amount of hours that the team could put into projects.
+        Although constructing the pupper can be done by a single inexperienced person in ~6 distracted hours, 3 people can complete the pupper in under 2 hours.<br>
+
+        <br>
+
+        It is my recomendation that a 3 person group splits the work up into:
+      </p>
+      <ul>
+        <li>Legs</li>
+        <li>Servos</li>
+        <li>Body and Leg Support</li>
+      </ul>
+
+      <br>
+
       <img src="Pupper - Focused.jpg">
     </div>
 
     <button onclick="toggle_visibility('Working_Demo', this)" class="expandable plus"> Demo Video of Working Pupper</button>
     <div class="hidden btn_group" id="Working_Demo">
-      <p>Description.</p>
+      <p>
+        Once the pupper is fully constructed we needed to show that we had the pupper in a usable state. Again all of these steps proved to be
+        invaluable for future investigation and debugging.
+      </p>
+      <ol>
+        <li>
+          Flash the micro-sd with the desired iso file (minipupper_ros2_Humble was the iso we use). This can be done with
+          <a href="https://etcher.balena.io/">belena etcher</a>.
+        </li>
+        <li>
+          Setup wifi. You will need a keyboard initially.
+          <ol class="nested">
+            <li>Use `sudo vim /etc/netplan/50-cloud-init.yaml`.</li>
+            <li>Add your ssid and password.</li>
+            <li>Use `sudo netplan apply`.</li>
+            <li>Use `sudo reboot` to apply network changes.</li>
+          </ol>
+        </li>
+        <li>Ensure you have the proper repositories. If you do not, clone the repos and then run their install files.</li>
+        <li>
+          Check if the calibrate file exists. If it does not, you'll need to run the install file in the mini_pupper_bsp again. As the calibration file
+          is setup after the dkms installations are checked, dkms cannot be installed. The process feels very janky, but it has worked to reset the calibration
+          file on both Monday Team 1's and Wednesday Team 2's pupper.
+          <ol class="nested">
+            <li>Check dkms with `dkms status`.</li>
+            <li>Remove all 3 dkms types with `sudo dkms remove name/1.0 --all`</li>
+            <li>Run the mini_pupper_bsp install file. It will likely fail on an os check.</li>
+            <li>Run it again.</li>
+          </ol>
+        </li>
+        <li>
+          Run a movement scheme. Either the <a href="https://github.com/mangdangroboticsclub/PS4Joystick">PS4 Joystick</a> movement scheme
+          or the <a href="https://github.com/mangdangroboticsclub/mini_pupper_ros">ros2 teleop_twist_keyboard</a> movement scheme.
+        </li>
+      </ol>
+
+      <br>
+
       <video controls="controls">
         <source src="Pupper-Controller-Demo.mp4">
       </video>
