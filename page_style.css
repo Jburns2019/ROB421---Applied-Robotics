@@ -85,15 +85,16 @@ button.expandable:hover {
     color: var(--active_button_color);
 }
 
-button.expandable:before {
+.plus:before {
     content: '\2B9A';
     margin-right: 10px;
     transition: transform 0.3s ease;
 }
 
-button.expandable.expanded:before {
+.minus:before {
     content: '\2B9B';
-    transform: rotate(90deg);
+    margin-right: 10px;
+    /* transform: rotate(90deg); */
 }
 
 .hidden {
