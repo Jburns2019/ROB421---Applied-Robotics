@@ -16,10 +16,19 @@ body {
     padding: 20px;
 }
 
-h1 {
+header {
     text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
     color: var(--title_color);
     margin: 20px 0;
+}
+
+h2 {
+    color: var(--title_color);
+    margin-bottom: 10px;
 }
 
 p, ol, ul {
@@ -34,6 +43,30 @@ a {
 
 a:hover {
     color: var(--active_button_color);
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #2f3640;
+    border-radius: 8px;
+}
+
+.section p, .section ol, .section ul {
+    margin-left: 20px;
 }
 
 button {
@@ -73,67 +106,16 @@ button.expandable.expanded:before {
     list-style-type: lower-alpha;
 }
 
-div.a h1 {
-    text-align: center;
-    color: var(--title_color);
-}
-
-div.btn_group p {
-    display: block;
-}
-
-div.btn_group button {
-    cursor: pointer;
-    display: block;
-    width: 100%;
-}
-
-div.btn_group video, div.btn_group iframe, div.btn_group img {
-    display: block;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 800px;
-}
-
 img {
     width: 100%;
     height: auto;
 }
 
-.tab { 
-    display:inline-block; 
-    margin-left: 40px; 
-}
-
-/* Flexbox Layout Enhancements */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.section {
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
-    margin: 20px 0;
-    background-color: #2f3640;
+iframe {
+    width: 80%;
+    height: 450px;
+    display: block;
+    margin: 0 auto;
+    border: none;
     border-radius: 8px;
-}
-
-.section h2 {
-    color: var(--title_color);
-    margin-bottom: 15px;
-}
-
-.section p, .section ol, .section ul {
-    margin-left: 20px;
-}
-
-.section ul {
-    list-style-type: disc;
-}
-
-.section ol {
-    list-style-type: decimal;
 }
