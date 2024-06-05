@@ -112,6 +112,11 @@ img {
     height: auto;
 }
 
+.small-image {
+    width: 50%; /* Adjust the percentage as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
 iframe {
     width: 80%;
     height: 450px;
