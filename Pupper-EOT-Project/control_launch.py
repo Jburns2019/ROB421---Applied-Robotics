@@ -1,7 +1,7 @@
 import subprocess
 import time
 
-def launch_command():
+def take_snapshot():
     p = subprocess.Popen("exec ros2 launch mini_pupper_slam slam.launch.py > /dev/null", shell=True)
     print("Started recording lidar hits for occupancy grid.")
 
@@ -20,4 +20,5 @@ def launch_command():
 
     #subprocess.Popen("gio open map.pgm", shell=True)
 
-launch_command()
+if __name__ == '__main__':
+    take_snapshot()
