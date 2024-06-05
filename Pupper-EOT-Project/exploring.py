@@ -23,9 +23,11 @@ import math
 
 # Putting this in here to avoid messing up ROS
 import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
+import random
 
 # -------------- Showing start and end and path ---------------
-def plot_with_explore_points(im, im_threshhold, zoom=1.0, robot_loc=None, explore_points=None, best_pt=None):
+def plot_with_explore_points(im, im_threshhold, zoom=1.0, robot_loc=None, explore_points=None, groupings=None, intersections=None, lines=None, best_pt=None):
     """Show the map plus, optionally, the robot location and points marked as ones to explore/use as end-points
     @param im - the image of the SLAM map
     @param im_threshhold - the image of the SLAM map
@@ -50,6 +52,24 @@ def plot_with_explore_points(im, im_threshhold, zoom=1.0, robot_loc=None, explor
     if explore_points is not None:
         for p in explore_points:
             axs[1].plot(p[0], p[1], '.b', markersize=2)
+
+    if groupings != None:
+        for group in groupings:
+            if len(group) > 25:
+                random_hex_color = '#' + ('%06x' % random.randrange(16**6))
+                axs[1].plot([group[0][0], group[-1][0]], [group[0][1], group[-1][1]], marker='.', color=f'{random_hex_color}')
+            # for p in group:
+            #     axs[1].plot(p[0], p[1], marker='.', color=f'{random_hex_color}')
+
+    if intersections != None:
+        for intersection in intersections:
+            random_hex_color = '#' + ('%06x' % random.randrange(16**6))
+            axs[1].plot(intersection[0], intersection[1], marker='.', color=f'{random_hex_color}')
+    
+    if lines != None:
+        for line in lines:
+            random_hex_color = '#' + ('%06x' % random.randrange(16**6))
+            axs[1].plot([line[0][0], line[1][0]], [line[0][1], line[1][1]], marker='.', color=f'{random_hex_color}')
 
     for i in range(0, 2):
         if robot_loc is not None:
@@ -146,6 +166,67 @@ def find_all_possible_goals(im):
                             rep_map[(x, y)] = 1
 
     return possible_goals
+
+def find_all_connected_pix(pixs):
+    pixs.sort()
+    connected_groups = []
+
+    for pix in pixs:
+        connection_found = False
+        for connected_group in connected_groups:
+            # for connected_group_pix in connected_group:
+            if abs(pix[0]-connected_group[-1][0]) <= 1 and abs(pix[1]-connected_group[-1][1]) <= 1:
+                connected_group.append(pix)
+                connection_found = True
+            
+            if connection_found:
+                break
+        
+        if not connection_found:
+             connected_groups.append([pix])
+            
+    return connected_groups
+
+def find_intersections(im, connected_groups: list):
+    ms = []
+    bs = []
+    for connected_group in connected_groups:
+        if len(connected_group) > 25 and connected_group[-1][0]-connected_group[0][0] > 0:
+            ms.append((connected_group[-1][1]-connected_group[0][1])/(connected_group[-1][0]-connected_group[0][0]))
+            bs.append(connected_group[-1][1] - ms[-1]*connected_group[-1][0])
+    
+    intersections = []
+    for x in np.arange(0, im.shape[1], .01):
+        ys = []
+        for i in range(len(ms)):
+            y = ms[i]*x+bs[i]
+
+            intersection_detected = False
+            for other_y in ys:
+                if abs(y - other_y) < .01:
+                    intersection_detected = True
+                
+                if intersection_detected:
+                     break
+            
+            if intersection_detected and not (np.round(x), np.round(y)) in intersections and 0 < np.round(y) < im.shape[0]:
+                intersections.append((np.round(x), np.round(y)))
+            
+            ys.append(y)
+    
+    lines = []
+    for i in range(len(ms)):
+        lines.append([(0, bs[i]), (im.shape[1], ms[i]*im.shape[1]+bs[i])])
+    
+    return intersections, lines
+
+def get_robot_pos(intersections):
+    intersections_by_axis = {'x': [], 'y': []}
+    for intersection in intersections:
+        intersections_by_axis['x'].append(intersection[0])
+        intersections_by_axis['y'].append(intersection[1])
+
+    return int(np.mean(intersections_by_axis['x'])), int(np.mean(intersections_by_axis['y']))
 
 def find_best_point(im, possible_points, robot_loc):
     """ Pick one of the unseen points to go to
@@ -247,25 +328,46 @@ def thicken_walls(im, start):
                     if neighbor[0] >= 0 and neighbor[0] < im.shape[1] and neighbor[1] >= 0 and neighbor[1] < im.shape[0] and neighbor != start:
                         im[neighbor[1], neighbor[0]] = 0
 
+def convert_ft_to_px(ft):
+    return np.round(ft*20/3)
+
+def convert_px_to_time(px):
+    return np.round(px*10.96/20)
+
+def convert_angle_to_time(angle):
+    return np.round(angle*29.33/730)
+
 if __name__ == '__main__':
-    im, im_thresh, robot_start_loc = path_planning.open_image("map.pgm")
-
-    # robot_start_loc = (100, 55)
-
-    thicken_walls(im_thresh, robot_start_loc)
+    im, im_thresh = path_planning.open_image("map_init.pgm")
 
     all_unseen = find_all_possible_goals(im_thresh)
-    best_unseen = find_best_point(im_thresh, all_unseen, robot_loc=robot_start_loc)
+    connected_groups = find_all_connected_pix(all_unseen)
+    intersections, lines = find_intersections(im_thresh, connected_groups)
+    robot_start_loc = get_robot_pos(intersections)
+    
+    thicken_walls(im_thresh, robot_start_loc)
 
-    zoom=1
+    zoom = 1
+    # plot_with_explore_points(im, im_thresh, zoom, robot_loc=robot_start_loc, intersections=intersections, lines=lines)
+
+    im = np.fliplr(im)
+    im_thresh = np.fliplr(im_thresh)
+    robot_start_loc = (im.shape[1]-robot_start_loc[0], robot_start_loc[1])
+    print(robot_start_loc)
+
+    all_unseen = find_all_possible_goals(im_thresh)
+    # best_unseen = find_best_point(im_thresh, all_unseen, robot_loc=robot_start_loc)
+    best_unseen = (robot_start_loc[0]+5, robot_start_loc[1]+10)
     plot_with_explore_points(im, im_thresh, zoom, robot_loc=robot_start_loc, explore_points=all_unseen, best_pt=best_unseen)
 
-    path = path_planning.search_algorithm(im_thresh, robot_start_loc, [best_unseen])
-    waypoints = find_waypoints(im_thresh, path)
-    path_planning.plot_with_path(im, im_thresh, zoom, robot_loc=robot_start_loc, goal_loc=best_unseen, path=waypoints)
+    # path = path_planning.search_algorithm(im_thresh, robot_start_loc, [best_unseen])
+    # waypoints = find_waypoints(im_thresh, path)
+    # path_planning.plot_with_path(im, im_thresh, zoom, robot_loc=robot_start_loc, goal_loc=best_unseen, path=waypoints)
+    
+    # instructions = path_planning.get_instructions(path)
+    # for instruction in instructions:
+    #     print(instruction)
 
     # Depending on if your mac, windows, linux, and if interactive is true, you may need to call this to get the plt
     # windows to show
     plt.show()
-
-    print("Done")

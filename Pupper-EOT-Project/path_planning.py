@@ -53,7 +53,7 @@ def plot_with_path(im, im_threshhold, zoom=1.0, robot_loc=None, goal_loc=None, p
     """
 
     # Double checking lower left corner
-    axs[1].plot(10, 5, 'xy', markersize=5)
+    # axs[1].plot(10, 5, 'xy', markersize=5)
 
     # Show original and thresholded image
     for i in range(0, 2):
@@ -274,24 +274,9 @@ def open_image(im_name):
 
     wall_threshold = 0.7
     free_threshold = 0.9
-    robot_pos = (0, 0)
-
-    try:
-        yaml_name = "Data/" + im_name[0:-3] + "yaml"
-
-        with open(yaml_name, "r") as f:
-            dict = yaml.safe_load(f)
-
-            # wall_threshold = dict["occupied_thresh"]
-            # free_threshold = dict["free_thresh"]
-            origin = [1.7, .45]
-
-            robot_pos = adjust_position(origin[:2], im, dict['resolution'])
-    except:
-        pass
-
+    
     im_thresh = convert_image(im, wall_threshold, free_threshold)
-    return im, im_thresh, robot_pos
+    return im, im_thresh
 
 def get_instructions(path):
     instructions = []
@@ -351,9 +336,9 @@ if __name__ == '__main__':
     # Use one of these
 
     """ Values for SLAM map"""
-    im, im_thresh, robot_start_loc = open_image("map.pgm")
+    im, im_thresh = open_image("map_testing.pgm")
 
-    # robot_start_loc = (100, 55)
+    robot_start_loc = (100, 55)
     # Closer one to try
     # robot_goal_loc = (315, 250)
     robot_goal_loc = (75, 85)
@@ -384,5 +369,3 @@ if __name__ == '__main__':
     # Depending on if your mac, windows, linux, and if interactive is true, you may need to call this to get the plt
     # windows to show
     plt.show()
-
-    print("Done")
