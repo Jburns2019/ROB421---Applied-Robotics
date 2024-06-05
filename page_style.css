@@ -113,8 +113,11 @@ img {
 }
 
 .small-image {
-    width: 50%; /* Adjust the percentage as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 50%; 
+    height: auto; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
 }
 
 iframe {
