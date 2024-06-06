@@ -102,16 +102,34 @@
 
             <br>
 
-            <iframe src="https://youtube.com/embed/RzNltnV_vV0" allowfullscreen></iframe>
+            <iframe src="https://youtube.com/embed/PcCbTTpzA0U" allowfullscreen></iframe>
             <p>
-                Description of the video.<br>
+                It should be noted that the video is running at 2x speed for compression and reader retension.<br>
+
+                <br>
+                
+                Although the goal for projects by this point is to use the real pupper, testing steps are always important to consistent progress to larger goals.
+                Considering my background in software I wanted to do something more complex that would move the team torward the goal (via movement) and demo how
+                movement can work for my teammates who also had personal assignments. When I thought of interesting dead reckoning movement schemes my mind went to
+                the classic DVD logo. It bounces off of walls that are arbitrarily large. As long as drift isn't too bad (spoiler, it was) the dvd logo could bounce around
+                for awhile. Admitedly I was ambitious in setting my stretch goal of integrating the lidar we had not yet received.<br>
+
+                <br>
+
+                The video shown above shows the classic dvd logo (created in Python) which simulated how many steps can be taken before a wall is hit and then the pupper simulated
+                to show what the pupper would look like bouncing off of said walls. A simulation approach was taken in order to minimize potential problems on the pupper before they
+                were necessary. This is a classic example of turning one problem into another. Instead of the pupper handling its environment as it enteracts with it, a contained
+                simulation of a completely different object is used with its own rules. The results of those rules are reflected by the pupper when it takes action.<br>
             </p>
 
             <br>
 
-            <iframe src="https://youtube.com/embed/PcCbTTpzA0U" allowfullscreen></iframe>
+            <iframe src="https://youtube.com/embed/RzNltnV_vV0" allowfullscreen></iframe>
             <p>
-                Description of the video.<br>
+                The concept for the pupper demo above was mostly described in the previous excerpt. Due to work space there is audio from my roommates. I chose to leave it in for entertainment
+                as well as for the pupper movement noises. Although the simulation is not shown, the actions were mostly correct. The bounding box for the dvd logo was made much smaller, which helped with
+                the deviation. There are a couple points where it seems to avoid collision with real life objects, but those are actually just pure coincidence. The biggest struggles for this project
+                were finding the teleop_twist_keyboard.py file, /opt/ros/humble/lib/python3.10/site-packages/teleop_twist_keyboard.py, which I had to rip grep for and time (3 days).
             </p>
 
             <br>
@@ -161,7 +179,7 @@
     <button onclick="toggle_visibility('Demo_2', this)" class="expandable plus"> Update Demo 2</button>
     <div class="hidden btn_group" id="Demo_2">
         <p>
-            Our final demo showcases the complete implementation of the SLAM system on the Mini Pupper, including autonomous navigation.
+            Our final demo showcases the complete implementation of the SLAM system on the Mini Pupper, including navigation. Fully autonomous navigation will be a later step.
         </p>
     </div>
 </body>
