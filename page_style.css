@@ -64,10 +64,6 @@ ul {
 }
 
 .section {
-    width: 96%;
-    /* max-width: 1200px; */
-    padding-left: 20px;
-    padding-right: 20px;
     margin: 10px;
     background-color: #2f3640;
     border-radius: 8px;
