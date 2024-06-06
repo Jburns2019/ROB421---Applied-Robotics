@@ -3,6 +3,7 @@
     --title_color: #ff4757;
     --text_color: #dcdde1;
     --hyper_color: #f39c12;
+    --embedded_color: #05e4d9;
     --active_button_color: #ff4757;
     --active_button_bg_color: #2f3640;
 }
@@ -13,12 +14,10 @@ body {
     line-height: 1.6;
     margin: 0;
     font-family: 'Arial', sans-serif;
-    /* padding: 20px; */
 }
 
 header {
     text-align: center;
-    /* margin-bottom: 20px; */
 }
 
 h1 {
@@ -45,6 +44,10 @@ a {
     transition: color 0.3s ease;
 }
 
+.section a {
+    margin-left: 0;
+}
+
 a:hover {
     color: var(--active_button_color);
 }
@@ -61,8 +64,8 @@ ul {
 }
 
 .section {
-    width: 100%;
-    max-width: 1200px;
+    width: 94%;
+    /* max-width: 1200px; */
     padding-left: 20px;
     padding-right: 20px;
     margin: 10px;
@@ -71,18 +74,24 @@ ul {
     border: 2px solid var(--hyper_color);
 }
 
+.section .section {
+    border-color: var(--embedded_color);
+} 
+
 .section p, .section ol, .section ul {
     margin-left: 20px;
 }
 
 button {
     cursor: pointer;
+    width: 100%;
     text-align: left;
     background-color: var(--active_button_bg_color);
     color: var(--text_color);
     border: none;
     padding: 10px 15px;
     margin: 5px 0;
+    border-radius: 8px;
     transition: background-color 0.3s ease;
 }
 

@@ -20,70 +20,68 @@
     <a href="../index.html">Main Website</a>
 
     <h1>Pupper-Race</h1>
-    <p>
-      For the pupper races, our TA wanted to show us <a href="https://github.com/raff17/pupper-intro-code">a few easy ways</a> to move the bot without
-      needing to get into ros.
-    </p>
-    <ol>
-      <li>Controlling the servo's directly using kinematics mathematics.</li>
-      <li>Using the same code that responds to the PS4 controller to tell the pupper how to move.</li>
-    </ol>
-
-    <br>
-
-    <button onclick="toggle_visibility('Task_1', this)" class="expandable plus"> Task 1</button>
-    <div class="hidden btn_group" id="Task_1">
+    <div class="section">
       <p>
-        Using pupper-intro-code/StanfordQuadrupedmini_pupper/src/leg_move.py we used the pwm{num} to target specific servo's.
-        The back legs and the front legs have positive angles mapped toward the center of the bot. Despite this we got the diagonal legs to move
-        pretty close to together. Since we only had to mimic walking on one leg and we were mimicking walking on all 4 legs, we did not bother
-        worrying about the height of the back legs.
+        For the pupper races, our TA wanted to show us <a href="https://github.com/raff17/pupper-intro-code">a few easy ways</a> to move the bot without
+        needing to get into ros.
       </p>
-
-      <br>
-
-      <iframe src="https://youtube.com/embed/lJidC1c5drk" allowfullscreen></iframe>
-
-      <p>
-        The careful observer will notice that the back left left's thigh is not moving properly. This was due to a burned out motor.
-        We unfortunately had to go immidiately from this checkoff to the class race.
-      </p>
-    </div>
-
-    <button onclick="toggle_visibility('Task_2', this)" class="expandable plus"> Task 2</button>
-    <div class="hidden btn_group" id="Task_2">
-      <p>
-        Using pupper-intro-code/PS4Joystick/easycontrol.py we mimiced the controller inputs to make the pupper move with only Python.
-        The pupper was given an initial launch command and then it needed to get over the finish line. Although originally there was supposed
-        to be a maze, the TA and instructor recognized that there was not enough time for teams to develop an acurate enough walking and turning mechanism.<br>
-
-        <br>
-
-        Our team had designed a somewhat precise move by degrees and move by feet, but drift and the bad servo put all of that out the window during the race.
-        Luckily the pupper got caught on the floor enough times to get it going in the correct direction (finishing first for Monday's group).<br>
-
-        <br>
-
-        Although the rear left servo was malfunctioning, the stars aligned and enough self course corrections resulted in a winning bot.
-      </p>
-
-      <br>
-
-      <iframe src="https://youtube.com/embed/6Joy7zDfp-0" allowfullscreen></iframe>
+      <ol>
+        <li>Controlling the servo's directly using kinematics mathematics.</li>
+        <li>Using the same code that responds to the PS4 controller to tell the pupper how to move.</li>
+      </ol>
       
-      <br>
+      <div class="section">
+        <button onclick="toggle_visibility('Task_1', this)" class="expandable plus"> Task 1</button>
+        <div class="hidden btn_group" id="Task_1">
+          <p>
+            Using pupper-intro-code/StanfordQuadrupedmini_pupper/src/leg_move.py we used the pwm{num} to target specific servo's.
+            The back legs and the front legs have positive angles mapped toward the center of the bot. Despite this we got the diagonal legs to move
+            pretty close to together. Since we only had to mimic walking on one leg and we were mimicking walking on all 4 legs, we did not bother
+            worrying about the height of the back legs.
+          </p>
 
-      <p>There were more than a few quirky things related to the ps4 joystick controls via Python.</p>
-      <ul>
-        <li>Movement drift.</li>
-        <li>More than 1 command required to activate and deactivate.</li>
-        <li>Activation and Trotting are toggled (not held constant), but movement commands must be repeated.</li>
-        <li>Activate and then trot in order to move.</li>
-        <li>A delay of .02 seconds moves the bot faster.</li>
-        <li>There is a setting which will make the pupper move faster.</li>
-        <li>Having the yellow asthetic pieces are actually not good for the servo's in testing.</li>
-        <li>Calibration height can be lowered to lower center of mass.</li>
-        <li>Ros twist commands are much better for handling movement.</li>
-      </ul>
-    </div>
+          <iframe src="https://youtube.com/embed/lJidC1c5drk" allowfullscreen></iframe>
+
+          <p>
+            The careful observer will notice that the back left left's thigh is not moving properly. This was due to a burned out motor.
+            We unfortunately had to go immidiately from this checkoff to the class race.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <button onclick="toggle_visibility('Task_2', this)" class="expandable plus"> Task 2</button>
+        <div class="hidden btn_group" id="Task_2">
+          <p>
+            Using pupper-intro-code/PS4Joystick/easycontrol.py we mimiced the controller inputs to make the pupper move with only Python.
+            The pupper was given an initial launch command and then it needed to get over the finish line. Although originally there was supposed
+            to be a maze, the TA and instructor recognized that there was not enough time for teams to develop an acurate enough walking and turning mechanism.<br>
+
+            <br>
+
+            Our team had designed a somewhat precise move by degrees and move by feet, but drift and the bad servo put all of that out the window during the race.
+            Luckily the pupper got caught on the floor enough times to get it going in the correct direction (finishing first for Monday's group).<br>
+
+            <br>
+
+            Although the rear left servo was malfunctioning, the stars aligned and enough self course corrections resulted in a winning bot.
+          </p>
+
+          <iframe src="https://youtube.com/embed/6Joy7zDfp-0" allowfullscreen></iframe>
+
+          <p>There were more than a few quirky things related to the ps4 joystick controls via Python.</p>
+          <ul>
+            <li>Movement drift.</li>
+            <li>More than 1 command required to activate and deactivate.</li>
+            <li>Activation and Trotting are toggled (not held constant), but movement commands must be repeated.</li>
+            <li>Activate and then trot in order to move.</li>
+            <li>A delay of .02 seconds moves the bot faster.</li>
+            <li>There is a setting which will make the pupper move faster.</li>
+            <li>Having the yellow asthetic pieces are actually not good for the servo's in testing.</li>
+            <li>Calibration height can be lowered to lower center of mass.</li>
+            <li>Ros twist commands are much better for handling movement.</li>
+          </ul>
+        </div>
+      </div>
+    </body>
 </html>

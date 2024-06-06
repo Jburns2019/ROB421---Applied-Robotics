@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team 1 - PupMappers</title>
+
     <link rel="stylesheet" type="text/css" href="../page_style.css">
     <script src="../scripts.js"></script>
 </head>
@@ -15,221 +16,215 @@
     </header>
 
     <a href="../index.html">Main Website</a>
-    <p>
-        Our final project is focused on using the Mini Pupper robot to implement SLAM (Simultaneous Localization and Mapping). The goal is to enable the robot to autonomously navigate and map its environment, enhancing its capability to perform complex tasks. Below, you'll find detailed information about our proposal, demo videos, and updates on our progress.
-    </p>
-
-    <br>
-
-    <button onclick="toggle_visibility('Proposal', this)" class="expandable plus"> Proposal</button>
-    <div class="hidden btn_group" id="Proposal">
+    <h1>PupMappers</h1>
+    <div class="section">
         <p>
-            Our final project proposal is to use the Mini Pupper robot to map a room using SLAM. Mapping and localization is an important problem to solve for many robotic systems. Giving the Mini Pupper the ability to localize itself and map its surroundings would further its capabilities of performing more complicated tasks autonomously.
+            Our final project is focused on using the Mini Pupper robot to implement SLAM (Simultaneous Localization and Mapping). The goal is to enable the robot to autonomously navigate and map its environment, enhancing its capability to perform complex tasks. Below, you'll find detailed information about our proposal, demo videos, and updates on our progress.
         </p>
 
-        <br>
-
-        <button onclick="toggle_visibility('proposal_presentation', this)" class="expandable plus"> Presentation</button>
-        <div class="hidden btn_group" id="proposal_presentation">
-            <p>
-                We gave a presentation intended to pitch our idea to our professor and to further investigate the tools we intend to use for the project. We've decided on the Mini Pupper robot for our SLAM system. We are using ROS to give us more SLAM capabilities and access to twist commands for more accurate robot movement. For hardware, we are using a innomaker LiDAR unit and the existing servos on the Pupper. Rviz is used to visualize the LiDAR data.
-            </p>
-            
-            <br>
-            
-            <object data="Project Pitch.pdf" type="application/pdf" width="100%" height="500"></object>
-        </div>
-
-        <button onclick="toggle_visibility('proposal_videos', this)" class="expandable plus"> Videos</button>
-        <div class="hidden btn_group" id="proposal_videos">
-            <p>
-                Here are some videos related to our proposal:
-            </p>
-
-            <br>
-
-            <iframe src="https://youtube.com/embed/X7Mf_iLr0XE" allowfullscreen></iframe>
-            <p>
-                This video demonstrates the keyboard simulation for the Mini Pupper. In this simulation, we show how the keyboard can be used to control the Mini Pupper's movements, which is essential for our mapping tasks. We utilize RViz as part of the simulation to visualize the LiDAR data and ensure accurate mapping of the room. This setup allows us to manually guide the Mini Pupper through the environment, collecting data for the SLAM system to create a detailed map.<br>
-            </p>
-
-            <br>
-
-            <iframe src="https://youtube.com/embed/VzPBjBh2btA" allowfullscreen></iframe>
-            <p>
-                This video showcases our ability to map a simulation environment for the Mini Pupper. Using ROS 2 and Gazebo, which is a robot simulation environment, we were able to interact with and control the Mini Pupper. Gazebo can be used independently or integrated with ROS 2 using a set of packages. In this simulation, we utilized keyboard commands embedded within ROS 2 to control the robot and map its surroundings. The visualized map is displayed using RViz, demonstrating our progress in achieving accurate mapping through simulation.<br>
-            </p>
-
-            <br>
-
-            <iframe src="https://youtube.com/embed/1fWf68K62EI" allowfullscreen></iframe>
-            <p>
-                This video was created for fun to demonstrate the Mini Pupper running in circles. Using RViz, we recorded the simulation of the Mini Pupper executing circular movements. Once completed, we put the robot into a continuous loop, showcasing its ability to perform repetitive tasks accurately within the simulated environment. For fun, we used it as a loading screen.<br>
-            </p>
-        </div>
-
-        <br>
-    </div>
-
-    <button onclick="toggle_visibility('Demo_0', this)" class="expandable plus"> Hello World Demo</button>
-    <div class="hidden btn_group" id="Demo_0">
-        <p>
-            Our initial demo involved setting up the Mini Pupper and running a simple "Hello World" program to ensure all components were functioning correctly.
-        </p>
-
-        <br>
-
-        <button onclick="toggle_visibility('presentation_0', this)" class="expandable plus"> Update Presentation</button>
-        <div class="hidden btn_group" id="presentation_0">
-            <p>
-                We presented our initial findings and progress, focusing on the setup process and initial tests of the Mini Pupper.
-            </p>
-            <object data="Project Update.pdf" type="application/pdf" width="100%" height="500"></object>
-        </div>
-
-        <button onclick="toggle_visibility('videos_0', this)" class="expandable plus"> Update Videos</button>
-        <div class="hidden btn_group" id="videos_0">
-            <p>
-                Here are some update videos showcasing our progress:
-            </p>
-
-            <br>
-
-            <iframe src="https://youtube.com/embed/d-B7l_8jRX8" allowfullscreen></iframe>
-            <p>
-                This video demonstrates the keyboard simulation on the Mini Pupper. In this simulation, we show how the keyboard can be used to control the Mini Pupper's movements, which is essential for our mapping tasks. This setup allows us to manually guide the Mini Pupper through the environment, collecting data for the SLAM system to create a detailed map.<br>
-            </p>
-
-            <br>
-
-            <iframe src="https://youtube.com/embed/PcCbTTpzA0U" allowfullscreen></iframe>
-            <p>
-                It should be noted that the video is running at 2x speed for compression and reader retension.<br>
-
-                <br>
-                
-                Although the goal for projects by this point is to use the real pupper, testing steps are always important to consistent progress to larger goals.
-                Considering my background in software I wanted to do something more complex that would move the team torward the goal (via movement) and demo how
-                movement can work for my teammates who also had personal assignments. When I thought of interesting dead reckoning movement schemes my mind went to
-                the classic DVD logo. It bounces off of walls that are arbitrarily large. As long as drift isn't too bad (spoiler, it was) the dvd logo could bounce around
-                for awhile. Admitedly I was ambitious in setting my stretch goal of integrating the lidar we had not yet received.<br>
-
-                <br>
-
-                The video shown above shows the classic dvd logo (created in Python) which simulated how many steps can be taken before a wall is hit and then the pupper simulated
-                to show what the pupper would look like bouncing off of said walls. A simulation approach was taken in order to minimize potential problems on the pupper before they
-                were necessary. This is a classic example of turning one problem into another. Instead of the pupper handling its environment as it enteracts with it, a contained
-                simulation of a completely different object is used with its own rules. The results of those rules are reflected by the pupper when it takes action.<br>
-            </p>
-
-            <br>
-
-            <iframe src="https://youtube.com/embed/RzNltnV_vV0" allowfullscreen></iframe>
-            <p>
-                The concept for the pupper demo above was mostly described in the previous excerpt. Due to work space there is audio from my roommates. I chose to leave it in for entertainment
-                as well as for the pupper movement noises. Although the simulation is not shown, the actions were mostly correct. The bounding box for the dvd logo was made much smaller, which helped with
-                the deviation. There are a couple points where it seems to avoid collision with real life objects, but those are actually just pure coincidence. The biggest struggles for this project
-                were finding the teleop_twist_keyboard.py file, /opt/ros/humble/lib/python3.10/site-packages/teleop_twist_keyboard.py, which I had to rip grep for and time (3 days).
-            </p>
-
-            <br>
-
-            <iframe src="https://youtube.com/embed/ZGS4t3Fdrqw" allowfullscreen></iframe>
-            <p>
-                This artifact was used to further the team's end-of-term project. Using the ROS 2 repository with the Mini Pupper, the team used a provided program. The team's goal with the project was to generate a map using SLAM on the Mini Pupper. This potentially enhanced the movement of the Mini Pupper, introducing more movements for each servo of the robot. The Mini Pupper performed a series of movements and created a dance routine along with a song. This artifact uses Colcon build to rebuild new packages of ROS 2.<br>
-            </p>
-
-            <br>
-
-            <iframe src="https://youtube.com/embed/jxYhrxGIf5A" allowfullscreen></iframe><br>
-            <p>
-                This artifact was used to further the team's end of term project. Using ROS2 repository with the Mini Pupper had the team use a provided program to manually control the robot using a computer keyboard. The team's goal with the project was to generate a map using SLAM on the pupper. This would potentially require the pupper to turn a certain amount. The artifact had modified that provided code to turn the Mini Pupper 90 degrees in either the clockwise or counter directions. This will better enable the team to move the robot and generate SLAM maps. Leading the team forward to attempt developing autonomous movement to generate additional area maps.<br>
-            </p>
-
-            <br>
-
-            <iframe src="https://youtube.com/embed/3EvsSjVtG7w" allowfullscreen></iframe><br>
-            <p>
-                My goal for this project was to figure out how to efficiently move and turn the Mini Pupper after the recent update to run it using ROS. Based on a movement program for twist commands in the existing Mini Pupper ROS repository, I created my own that had the robot move forward, turn 180 degrees, and then return to its starting position. The robot was fairly stable and consistent going forward, but I did have some difficulty turning the robot exactly 180 degrees as is apparent in the video. I found there was a decent amount of variability in how much the Mini Pupper would turn each time while running the same program. I hope to be able to develop a more robust system for turning later on.<br>
-            </p>
-
-            <br>
-
-            <iframe src="https://youtube.com/embed/Bpg9jhSw23E" allowfullscreen></iframe>
-            <p>
-                This video demonstrates the LiDAR module in ROS 2. The Mini Pupper is mounted with a MANGDANG STL-06P LiDAR module, which performs well as intended. The LiDAR system uses laser pulses to measure distances to surrounding objects, creating a detailed 2D map of the environment. The video shows lines of different colors signifying various objects detected by the LiDAR. The darker the color, the more likely it is recognized as a solid object. This color coding helps in distinguishing between different types of objects and understanding their solidity. The LiDAR data is visualized in RViz, a 2D visualization tool for ROS, which allows us to see the environment from the robot's perspective and ensures accurate mapping and obstacle detection.<br>
-            </p>
-        </div>
-
-        <br>
-    </div>
-
-    <button onclick="toggle_visibility('Demo_1', this)" class="expandable plus"> Update Demo 1</button>
-    <div class="hidden btn_group" id="Demo_1">
-        <p>
-            In this demo, we focused on improving the accuracy of the robot's movements and integrating more sensors.
-        </p>
-        <img src="demo_1.png" alt="Map of a room created during Demo 1" class="small-image">
-        <p>
-            For the first demo, we attempted to solidify the LiDAR integration with the Mini Pupper to generate a map outside of a simulation. We explored two approaches for integrating the LiDAR: initially reviewing and utilizing the existing Mini Pupper SLAM documentation to begin generating maps, and subsequently attempting to modify or develop our own SLAM implementation to achieve better control over the mapping process. The resulting map demonstrates the Mini Pupper's ability to accurately navigate and map its environment. By integrating additional sensors and refining the robot's movements, we were able to create a detailed and accurate representation of the room.<br>
-        </p>
-        <br>
-    </div>
-
-    <button onclick="toggle_visibility('Demo_2', this)" class="expandable plus"> Update Demo 2</button>
-    <div class="hidden btn_group" id="Demo_2">
-        <p>
-            Our final demo showcases the complete implementation of the SLAM system on the Mini Pupper, including navigation.<br>
-        </p>
-        
-        <button onclick="toggle_visibility('final_presentation', this)" class="expandable plus"> Presentation</button>
-        <div class="hidden btn_group" id="final_presentation">
-            <p>The final project update.<br></p>
-            <br>
-            <object data="Final Project Update.pdf" type="application/pdf" width="100%" height="500"></object>
-        </div>
-
-
-        <button onclick="toggle_visibility('videos_1', this)" class="expandable plus"> Update Videos</button>
-        <div class="hidden btn_group" id="videos_1">
-        
-            <iframe src="https://youtube.com/embed/kvn6AokmaWs" allowfullscreen></iframe>
-
-            <p>
-                There are a few things to note about the video above.
-            </p>
-            <ul>
-                <li>
-                    The "leash" as some people have called it was due to the pupper's battery dieing right as we started recording for the demo.
-                    The pupper has a power cord and so we got around the issue by connecting an extension cord. John was holding the power cord to keep it from interfearing with the pupper's motion.
-                </li>
-                <li>
-                    The pupper is much closer to the ground than in previous videos. After discussing the pupper's proclivity to tipping over during turns with the developer we learned that
-                    the center of mass can just be lowered. This also keeps the pupper from kicking the ground as much.
-                </li>
-                <li>
-                    The teleop_twist_keyboard command is different than what is given out of the box. I made some external libraries to "think" through the various functions that we still needed for
-                    localization and mapping. One of those changes draws graphs (in png form) that allows me to see what the pupper was thinking about its environment. This drawing step causes the pupper
-                    to appear to be thinking for longer. Though part of the extra time is due to the pupper just not being a fast thinker.
-                </li>
-                <li>
-                    An occupancy grid was created by ROS using lidar before the start of the video. ROS's map.yaml which should store the pupper's location on the map is not correct. This causes there
-                    to be a "where am i" in the image. Though we did solve the question, the accuracy is not perfect and therefore the pupper in the video actually thinks there is a table infront of it,
-                    which is why it does so much turning.
-                </li>
-            </ul>
-
-            <p>
-                Regardless of the setbacks, the 4 days that led up to this video were insane. A ton of effort and brainstorming was put in to find clever out of the box ways of circumventing our lack of
-                ros2 knowledge, challenges the pupper put up, and how to make something presentable so we could finish the assignment. Luckily after spending most of the term working on ros2 a method clicked
-                and all that was left was to just do it. We found the problems and tackled them one by one.
-            </p>
-
-            <button onclick="toggle_visibility('solution', this)" class="expandable plus"> Brainstorm Steps</button>
-            <div class="hidden btn_group" id="solution">
+        <div class="section">
+            <button onclick="toggle_visibility('Proposal', this)" class="expandable plus"> Proposal</button>
+            <div class="hidden btn_group" id="Proposal">
                 <p>
-
+                    Our final project proposal is to use the Mini Pupper robot to map a room using SLAM. Mapping and localization is an important problem to solve for many robotic systems. Giving the Mini Pupper the ability to localize itself and map its surroundings would further its capabilities of performing more complicated tasks autonomously.
                 </p>
+
+                <button onclick="toggle_visibility('proposal_presentation', this)" class="expandable plus"> Presentation</button>
+                <div class="hidden btn_group" id="proposal_presentation">
+                    <p>
+                        We gave a presentation intended to pitch our idea to our professor and to further investigate the tools we intend to use for the project. We've decided on the Mini Pupper robot for our SLAM system. We are using ROS to give us more SLAM capabilities and access to twist commands for more accurate robot movement. For hardware, we are using a innomaker LiDAR unit and the existing servos on the Pupper. Rviz is used to visualize the LiDAR data.
+                    </p>
+                    
+                    <object data="Project Pitch.pdf" type="application/pdf" width="100%" height="500"></object>
+                </div>
+
+                <button onclick="toggle_visibility('proposal_videos', this)" class="expandable plus"> Videos</button>
+                <div class="hidden btn_group" id="proposal_videos">
+                    <p>
+                        Here are some videos related to our proposal:
+                    </p>
+
+                    <p>
+                        This video demonstrates the keyboard simulation for the Mini Pupper. In this simulation, we show how the keyboard can be used to control the Mini Pupper's movements, which is essential for our mapping tasks. We utilize RViz as part of the simulation to visualize the LiDAR data and ensure accurate mapping of the room. This setup allows us to manually guide the Mini Pupper through the environment, collecting data for the SLAM system to create a detailed map.<br>
+                    </p>
+                    <iframe src="https://youtube.com/embed/X7Mf_iLr0XE" allowfullscreen></iframe>
+                    
+                    <br>
+
+                    <p>
+                        This video showcases our ability to map a simulation environment for the Mini Pupper. Using ROS 2 and Gazebo, which is a robot simulation environment, we were able to interact with and control the Mini Pupper. Gazebo can be used independently or integrated with ROS 2 using a set of packages. In this simulation, we utilized keyboard commands embedded within ROS 2 to control the robot and map its surroundings. The visualized map is displayed using RViz, demonstrating our progress in achieving accurate mapping through simulation.<br>
+                    </p>
+                    <iframe src="https://youtube.com/embed/VzPBjBh2btA" allowfullscreen></iframe>
+                    
+                    <br>
+
+                    <p>
+                        This video was created for fun to demonstrate the Mini Pupper running in circles. Using RViz, we recorded the simulation of the Mini Pupper executing circular movements. Once completed, we put the robot into a continuous loop, showcasing its ability to perform repetitive tasks accurately within the simulated environment. For fun, we used it as a loading screen.<br>
+                    </p>
+                    <iframe src="https://youtube.com/embed/1fWf68K62EI" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <button onclick="toggle_visibility('Demo_0', this)" class="expandable plus"> Hello World Demo</button>
+            <div class="hidden btn_group" id="Demo_0">
+                <p>
+                    Our initial demo involved setting up the Mini Pupper and running a simple "Hello World" program to ensure all components were functioning correctly.
+                </p>
+
+                <button onclick="toggle_visibility('presentation_0', this)" class="expandable plus"> Update Presentation</button>
+                <div class="hidden btn_group" id="presentation_0">
+                    <p>
+                        We presented our initial findings and progress, focusing on the setup process and initial tests of the Mini Pupper.
+                    </p>
+                    <object data="Project Update.pdf" type="application/pdf" width="100%" height="500"></object>
+                </div>
+
+                <button onclick="toggle_visibility('videos_0', this)" class="expandable plus"> Update Videos</button>
+                <div class="hidden btn_group" id="videos_0">
+                    <p>
+                        Here are some update videos showcasing our progress:
+                    </p>
+
+                    <p>
+                        This video demonstrates the keyboard simulation on the Mini Pupper. In this simulation, we show how the keyboard can be used to control the Mini Pupper's movements, which is essential for our mapping tasks. This setup allows us to manually guide the Mini Pupper through the environment, collecting data for the SLAM system to create a detailed map.<br>
+                    </p>
+                    <iframe src="https://youtube.com/embed/d-B7l_8jRX8" allowfullscreen></iframe>
+                    
+
+                    <br>
+
+                    <p>
+                        Although the goal for projects by this point is to use the real pupper, testing steps are always important to consistent progress to larger goals.
+                        Considering my background in software I wanted to do something more complex that would move the team torward the goal (via movement) and demo how
+                        movement can work for my teammates who also had personal assignments. When I thought of interesting dead reckoning movement schemes my mind went to
+                        the classic DVD logo. It bounces off of walls that are arbitrarily large. As long as drift isn't too bad (spoiler, it was) the dvd logo could bounce around
+                        for awhile. Admitedly I was ambitious in setting my stretch goal of integrating the lidar we had not yet received.<br>
+
+                        <br>
+
+                        The video shown above shows the classic dvd logo (created in Python) which simulated how many steps can be taken before a wall is hit and then the pupper simulated
+                        to show what the pupper would look like bouncing off of said walls. A simulation approach was taken in order to minimize potential problems on the pupper before they
+                        were necessary. This is a classic example of turning one problem into another. Instead of the pupper handling its environment as it enteracts with it, a contained
+                        simulation of a completely different object is used with its own rules. The results of those rules are reflected by the pupper when it takes action.<br>
+                    </p>
+                    <iframe src="https://youtube.com/embed/PcCbTTpzA0U" allowfullscreen></iframe>
+                    <p>
+                        It should be noted that the video is running at 2x speed for compression and reader retension.<br>
+                    </p>
+
+                    <br>
+
+                    <p>
+                        The concept for the pupper demo above was mostly described in the previous excerpt. Due to work space there is audio from my roommates. I chose to leave it in for entertainment
+                        as well as for the pupper movement noises. Although the simulation is not shown, the actions were mostly correct. The bounding box for the dvd logo was made much smaller, which helped with
+                        the deviation. There are a couple points where it seems to avoid collision with real life objects, but those are actually just pure coincidence. The biggest struggles for this project
+                        were finding the teleop_twist_keyboard.py file, /opt/ros/humble/lib/python3.10/site-packages/teleop_twist_keyboard.py, which I had to rip grep for and time (3 days).
+                    </p>
+                    <iframe src="https://youtube.com/embed/RzNltnV_vV0" allowfullscreen></iframe>
+                    
+                    <br>
+
+                    <p>
+                        This artifact was used to further the team's end-of-term project. Using the ROS 2 repository with the Mini Pupper, the team used a provided program. The team's goal with the project was to generate a map using SLAM on the Mini Pupper. This potentially enhanced the movement of the Mini Pupper, introducing more movements for each servo of the robot. The Mini Pupper performed a series of movements and created a dance routine along with a song. This artifact uses Colcon build to rebuild new packages of ROS 2.<br>
+                    </p>
+                    <iframe src="https://youtube.com/embed/ZGS4t3Fdrqw" allowfullscreen></iframe>
+                    
+                    <br>
+
+                    <p>
+                        This artifact was used to further the team's end of term project. Using ROS2 repository with the Mini Pupper had the team use a provided program to manually control the robot using a computer keyboard. The team's goal with the project was to generate a map using SLAM on the pupper. This would potentially require the pupper to turn a certain amount. The artifact had modified that provided code to turn the Mini Pupper 90 degrees in either the clockwise or counter directions. This will better enable the team to move the robot and generate SLAM maps. Leading the team forward to attempt developing autonomous movement to generate additional area maps.<br>
+                    </p>
+                    <iframe src="https://youtube.com/embed/jxYhrxGIf5A" allowfullscreen></iframe>
+                    
+                    <br>
+
+                    <p>
+                        My goal for this project was to figure out how to efficiently move and turn the Mini Pupper after the recent update to run it using ROS. Based on a movement program for twist commands in the existing Mini Pupper ROS repository, I created my own that had the robot move forward, turn 180 degrees, and then return to its starting position. The robot was fairly stable and consistent going forward, but I did have some difficulty turning the robot exactly 180 degrees as is apparent in the video. I found there was a decent amount of variability in how much the Mini Pupper would turn each time while running the same program. I hope to be able to develop a more robust system for turning later on.<br>
+                    </p>
+                    <iframe src="https://youtube.com/embed/3EvsSjVtG7w" allowfullscreen></iframe>
+                    
+                    <br>
+
+                    <p>
+                        This video demonstrates the LiDAR module in ROS 2. The Mini Pupper is mounted with a MANGDANG STL-06P LiDAR module, which performs well as intended. The LiDAR system uses laser pulses to measure distances to surrounding objects, creating a detailed 2D map of the environment. The video shows lines of different colors signifying various objects detected by the LiDAR. The darker the color, the more likely it is recognized as a solid object. This color coding helps in distinguishing between different types of objects and understanding their solidity. The LiDAR data is visualized in RViz, a 2D visualization tool for ROS, which allows us to see the environment from the robot's perspective and ensures accurate mapping and obstacle detection.<br>
+                    </p>
+                    <iframe src="https://youtube.com/embed/Bpg9jhSw23E" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <button onclick="toggle_visibility('Demo_1', this)" class="expandable plus"> Update Demo 1</button>
+            <div class="hidden btn_group" id="Demo_1">
+                <p>
+                    In this demo, we focused on improving the accuracy of the robot's movements and integrating more sensors.
+                </p>
+                <img src="demo_1.png" alt="Map of a room created during Demo 1" class="small-image">
+                <p>
+                    For the first demo, we attempted to solidify the LiDAR integration with the Mini Pupper to generate a map outside of a simulation. We explored two approaches for integrating the LiDAR: initially reviewing and utilizing the existing Mini Pupper SLAM documentation to begin generating maps, and subsequently attempting to modify or develop our own SLAM implementation to achieve better control over the mapping process. The resulting map demonstrates the Mini Pupper's ability to accurately navigate and map its environment. By integrating additional sensors and refining the robot's movements, we were able to create a detailed and accurate representation of the room.<br>
+                </p>
+                <br>
+            </div>
+        </div>
+
+        <div class="section">
+            <button onclick="toggle_visibility('Demo_2', this)" class="expandable plus"> Update Demo 2</button>
+            <div class="hidden btn_group" id="Demo_2">
+                <p>
+                    Our final demo showcases the complete implementation of the SLAM system on the Mini Pupper, including navigation.<br>
+                </p>
+                
+                <button onclick="toggle_visibility('final_presentation', this)" class="expandable plus"> Presentation</button>
+                <div class="hidden btn_group" id="final_presentation">
+                    <p>The final project update.<br></p>
+                    <br>
+                    <object data="Final Project Update.pdf" type="application/pdf" width="100%" height="500"></object>
+                </div>
+
+                <button onclick="toggle_visibility('videos_1', this)" class="expandable plus"> Update Videos</button>
+                <div class="hidden btn_group" id="videos_1">
+                
+                    <iframe src="https://youtube.com/embed/kvn6AokmaWs" allowfullscreen></iframe>
+
+                    <p>
+                        There are a few things to note about the video above.
+                    </p>
+                    <ul>
+                        <li>
+                            The "leash" as some people have called it was due to the pupper's battery dieing right as we started recording for the demo.
+                            The pupper has a power cord and so we got around the issue by connecting an extension cord. John was holding the power cord to keep it from interfearing with the pupper's motion.
+                        </li>
+                        <li>
+                            The pupper is much closer to the ground than in previous videos. After discussing the pupper's proclivity to tipping over during turns with the developer we learned that
+                            the center of mass can just be lowered. This also keeps the pupper from kicking the ground as much.
+                        </li>
+                        <li>
+                            The teleop_twist_keyboard command is different than what is given out of the box. I made some external libraries to "think" through the various functions that we still needed for
+                            localization and mapping. One of those changes draws graphs (in png form) that allows me to see what the pupper was thinking about its environment. This drawing step causes the pupper
+                            to appear to be thinking for longer. Though part of the extra time is due to the pupper just not being a fast thinker.
+                        </li>
+                        <li>
+                            An occupancy grid was created by ROS using lidar before the start of the video. ROS's map.yaml which should store the pupper's location on the map is not correct. This causes there
+                            to be a "where am i" in the image. Though we did solve the question, the accuracy is not perfect and therefore the pupper in the video actually thinks there is a table infront of it,
+                            which is why it does so much turning.
+                        </li>
+                    </ul>
+
+                    <p>
+                        Regardless of the setbacks, the 4 days that led up to this video were insane. A ton of effort and brainstorming was put in to find clever out of the box ways of circumventing our lack of
+                        ros2 knowledge, challenges the pupper put up, and how to make something presentable so we could finish the assignment. Luckily after spending most of the term working on ros2 a method clicked
+                        and all that was left was to just do it. We found the problems and tackled them one by one.
+                    </p>
+
+                    <button onclick="toggle_visibility('solution', this)" class="expandable plus"> Brainstorm Steps</button>
+                    <div class="hidden btn_group" id="solution">
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
