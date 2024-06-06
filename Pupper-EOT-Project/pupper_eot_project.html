@@ -179,8 +179,43 @@
     <button onclick="toggle_visibility('Demo_2', this)" class="expandable plus"> Update Demo 2</button>
     <div class="hidden btn_group" id="Demo_2">
         <p>
-            Our final demo showcases the complete implementation of the SLAM system on the Mini Pupper, including navigation. Fully autonomous navigation will be a later step.
+            Our final demo showcases the complete implementation of the SLAM system on the Mini Pupper, including navigation.<br>
         </p>
+        
+        <br>
+        
+        <iframe src="https://youtube.com/embed/kvn6AokmaWs" allowfullscreen></iframe>
+
+        <p>
+            There are a few things to note about the video above.
+        </p>
+        <ul>
+            <li>
+                The "leash" as some people have called it was due to the pupper's battery dieing right as we started recording for the demo.
+                The pupper has a power cord and so we got around the issue by connecting an extension cord. John was holding the power cord to keep it from interfearing with the pupper's motion.
+            </li>
+            <li>
+                The pupper is much closer to the ground than in previous videos. After discussing the pupper's proclivity to tipping over during turns with the developer we learned that
+                the center of mass can just be lowered. This also keeps the pupper from kicking the ground as much.
+            </li>
+            <li>
+                The teleop_twist_keyboard command is different than what is given out of the box. I made some external libraries to "think" through the various functions that we still needed for
+                localization and mapping. One of those changes draws graphs (in png form) that allows me to see what the pupper was thinking about its environment. This drawing step causes the pupper
+                to appear to be thinking for longer. Though part of the extra time is due to the pupper just not being a fast thinker.
+            </li>
+            <li>
+                An occupancy grid was created by ROS using lidar before the start of the video. ROS's map.yaml which should store the pupper's location on the map is not correct. This causes there
+                to be a "where am i" in the image. Though we did solve the question, the accuracy is not perfect and therefore the pupper in the video actually thinks there is a table infront of it,
+                which is why it does so much turning.
+            </li>
+        </ul>
+
+        <p>
+            Regardless of the setbacks, the 4 days that led up to this video were insane. A ton of effort and brainstorming was put in to find clever out of the box ways of circumventing our lack of
+            ros2 knowledge, challenges the pupper put up, and how to make something presentable so we could finish the assignment. Luckily after spending most of the term working on ros2 a method clicked
+            and all that was left was to just do it. We found the problems and tackled them one by one.
+        </p>
+
     </div>
 </body>
 </html>
