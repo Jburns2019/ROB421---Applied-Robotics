@@ -1,6 +1,8 @@
 <!DOCTYPE html>
   <html>
     <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Team 1 - Misty Python</title>
       
       <link rel="stylesheet" type="text/css" href="../page_style.css">
@@ -18,187 +20,191 @@
     <a href="../index.html">Main Website</a>
 
     <h1>Misty-Python</h1>
-    <button onclick="toggle_visibility('Individual_Assignments', this)" class="expandable plus"> Individual Assignments</button>
-    <div class="hidden btn_group" id="Individual_Assignments">
-      <p>
-        The prompt for the individual assignments is as follows:<br>
-        For this artifact, you individually must propose something you want to implement and video-record by controlling the Misty II robot
-        with the Python programming method. Your artifact should not be identical to anything from the team assignment or anyone else's
-        individual artifact in the class; use this opportunity to try something out with the Misty robot that interests you.<br>
-      </p>
-
-      <br>
-
-      <button onclick="toggle_visibility('Johns_Individual_Assignment', this)" class="expandable plus"> John's Individual Task Video</button>
-      <div class="hidden btn_group" id="Johns_Individual_Assignment">
+    <div class="section">
+      <button onclick="toggle_visibility('Individual_Assignments', this)" class="expandable plus"> Individual Assignments</button>
+      <div class="hidden btn_group" id="Individual_Assignments">
         <p>
-          Misty Python allows for more control, but more control still does not fix the movement hardware problems. Although I initially
-          wanted to make something like the naive exploration of a roomba. I eventually scrapped the idea and pursued something more creative.
-          Opporating under the assumption that the misty bot's face would allow picture updates, I started working on a chess game.
-          As using my computer for partial processing was acceptable, I planned to use Misty for NLP, display, and speach interaction.<br>
+          The prompt for the individual assignments is as follows:<br>
+          For this artifact, you individually must propose something you want to implement and video-record by controlling the Misty II robot
+          with the Python programming method. Your artifact should not be identical to anything from the team assignment or anyone else's
+          individual artifact in the class; use this opportunity to try something out with the Misty robot that interests you.<br>
+        </p>
+
+        <br>
+
+        <button onclick="toggle_visibility('Johns_Individual_Assignment', this)" class="expandable plus"> John's Individual Task Video</button>
+        <div class="hidden btn_group" id="Johns_Individual_Assignment">
+          <p>
+            Misty Python allows for more control, but more control still does not fix the movement hardware problems. Although I initially
+            wanted to make something like the naive exploration of a roomba. I eventually scrapped the idea and pursued something more creative.
+            Opporating under the assumption that the misty bot's face would allow picture updates, I started working on a chess game.
+            As using my computer for partial processing was acceptable, I planned to use Misty for NLP, display, and speach interaction.<br>
+
+            <br>
+
+            Unfortunately, images could not be uploaded to misty's face. This was definitely something I should have checked before on the chess
+            simulation over the weekend. The chess game is capable of 2 autonomous players, 1 autonomous to 1 manual player, and 2 manual players.
+            The chess board is interacted with by speech and visualized on the computer screen.
+          </p>
 
           <br>
 
-          Unfortunately, images could not be uploaded to misty's face. This was definitely something I should have checked before on the chess
-          simulation over the weekend. The chess game is capable of 2 autonomous players, 1 autonomous to 1 manual player, and 2 manual players.
-          The chess board is interacted with by speech and visualized on the computer screen.
-        </p>
+          <iframe src="https://youtube.com/embed/UdMlsRihbTk" allowfullscreen></iframe>
+          <br>
+        </div>
 
-        <br>
+        <button onclick="toggle_visibility('Hendys_Individual_Assignment', this)" class="expandable plus"> Hendy's Individual Task Video</button>
+        <div class="hidden btn_group" id="Hendys_Individual_Assignment">
+          <p>Develop Misty as a companion robot to support elderly care. Program Misty to assist seniors in crossing the road safely and monitor their well-being. 
+            Misty will help them cross the road and check if they have fallen or are still okay. Enhance its capabilities to detect falls and promptly alert for assistance if needed.</p>
+          <br>
 
-        <iframe src="https://youtube.com/embed/UdMlsRihbTk" allowfullscreen></iframe>
+          <iframe src="https://youtube.com/embed/PyMhci-GR5I" allowfullscreen></iframe>
+          <iframe src="https://youtube.com/embed/OsK_AAqsqn8" allowfullscreen></iframe>
+          <br>
+        </div>
+
+        <button onclick="toggle_visibility('Tims_Individual_Assignment', this)" class="expandable plus"> Tim's Individual Task Video</button>
+        <div class="hidden btn_group" id="Tims_Individual_Assignment">
+          <p>This artifact was a test of the Misty II's SLAM capabilities. This was primarily conducted as a proof of concept for the student to understand how a robot can
+            map out a room. The functionality of the Misty II robot left much to be desired in terms of control. However the video demonstrates that the robot can scan the area
+            around it and generate a map that can be viewed. This project led discussions for the team to theorize how the SLAM functionality could be implemented in the
+            Mini Pupper.
+          </p>
+
+          <br>
+
+          <iframe src="https://youtube.com/embed/hG4HJgdHCks" allowfullscreen></iframe>
+          <br>
+        </div>
+
+        <button onclick="toggle_visibility('Daniels_Individual_Assignment', this)" class="expandable plus"> Daniel's Individual Task Video</button>
+        <div class="hidden btn_group" id="Daniels_Individual_Assignment">
+          <p>
+            For my Misty python activity, I wanted to focus on using Misty's NLP capabilities after failing to incorporate it for the blockly activity.
+            I settled on having it recognize three different trigger words to trigger three different dances. I also made different voice lines for Misty to say in response
+            to the different words it recognized. Finally, I used the bump sensors to tell Misty if it did a good job or not, who then responded with one random option from
+            each respective response bank. The main challenge was Misty moving somewhat sluggishly and erratically, this lead to me changing a lot of the movement commands to work
+            within the confines of what the robot was capable of at the moment.
+          </p>
+
+          <br>
+
+          <iframe src="https://youtube.com/embed/7ZEvYNFdkEo" allowfullscreen></iframe>
+        </div>
+
         <br>
       </div>
-
-      <button onclick="toggle_visibility('Hendys_Individual_Assignment', this)" class="expandable plus"> Hendy's Individual Task Video</button>
-      <div class="hidden btn_group" id="Hendys_Individual_Assignment">
-        <p>Develop Misty as a companion robot to support elderly care. Program Misty to assist seniors in crossing the road safely and monitor their well-being. 
-          Misty will help them cross the road and check if they have fallen or are still okay. Enhance its capabilities to detect falls and promptly alert for assistance if needed.</p>
-        <br>
-
-        <iframe src="https://youtube.com/embed/PyMhci-GR5I" allowfullscreen></iframe>
-        <iframe src="https://youtube.com/embed/OsK_AAqsqn8" allowfullscreen></iframe>
-        <br>
-      </div>
-
-      <button onclick="toggle_visibility('Tims_Individual_Assignment', this)" class="expandable plus"> Tim's Individual Task Video</button>
-      <div class="hidden btn_group" id="Tims_Individual_Assignment">
-        <p>This artifact was a test of the Misty II's SLAM capabilities. This was primarily conducted as a proof of concept for the student to understand how a robot can
-          map out a room. The functionality of the Misty II robot left much to be desired in terms of control. However the video demonstrates that the robot can scan the area
-          around it and generate a map that can be viewed. This project led discussions for the team to theorize how the SLAM functionality could be implemented in the
-          Mini Pupper.
-        </p>
-
-        <br>
-
-        <iframe src="https://youtube.com/embed/hG4HJgdHCks" allowfullscreen></iframe>
-        <br>
-      </div>
-
-      <button onclick="toggle_visibility('Daniels_Individual_Assignment', this)" class="expandable plus"> Daniel's Individual Task Video</button>
-      <div class="hidden btn_group" id="Daniels_Individual_Assignment">
-        <p>
-          For my Misty python activity, I wanted to focus on using Misty's NLP capabilities after failing to incorporate it for the blockly activity.
-          I settled on having it recognize three different trigger words to trigger three different dances. I also made different voice lines for Misty to say in response
-          to the different words it recognized. Finally, I used the bump sensors to tell Misty if it did a good job or not, who then responded with one random option from
-          each respective response bank. The main challenge was Misty moving somewhat sluggishly and erratically, this lead to me changing a lot of the movement commands to work
-          within the confines of what the robot was capable of at the moment.
-        </p>
-
-        <br>
-
-        <iframe src="https://youtube.com/embed/7ZEvYNFdkEo" allowfullscreen></iframe>
-      </div>
-
-      <br>
     </div>
 
-    <button onclick="toggle_visibility('Group_Tasks', this)" class="expandable plus"> Group Tasks</button>
-    <div class="hidden btn_group" id="Group_Tasks">
-      <p>
-        A return to Misty, but with Python instead of Visual Programming. This was intended as a first exposure of Python to robotics.
-      </p>
-
-      <br>
-
-      <button onclick="toggle_visibility('Task_1', this)" class="expandable plus"> Task 1</button>
-      <div class="hidden btn_group" id="Task_1">
+    <div class="section">
+      <button onclick="toggle_visibility('Group_Tasks', this)" class="expandable plus"> Group Tasks</button>
+      <div class="hidden btn_group" id="Group_Tasks">
         <p>
-          We were to implement the following prompts.<br>
-
-          <br>
-          
-          Using the same “busy street” scenario, make Misty move forward for 5 seconds, turn around, wait 3 seconds, and return to
-          their starting position. As you would when crossing the road (hopefully) make sure that Misty also looks both ways when
-          crossing the road, as well as uses their arms movement at least once. Sometimes Misty will have trouble moving in one direction,
-          so if you are having trouble with Misty moving just switch directions.<br>
-
-          <br>
-
-          To the previous code you created (Misty crossing the road), we will now add a way for Misty to communicate with others and signal
-          when it is walking or stopped. In the robotics world this is the bare minimum you should implement on a robot if it is going to
-          interact with humans in any way!
-        </p>
-        <ol>
-          <li>
-            Have Misty say something using the speak command! This can be anything you want to be creative with
-            it (school-appropriate, please!).
-          </li>
-          <li>
-            Have Misty signal when it stops by displaying a red light and green when Misty is moving. You can assume that when Misty
-            is turning the LED will remain green.
-          </li>
-        </ol>
-
-        <br>
-
-        <p>
-          Now let's have Misty display a new pair of eyes that fit the scenario you put Misty in! For example, if it was Misty's
-          first time crossing the road they might be excited and happy!
+          A return to Misty, but with Python instead of Visual Programming. This was intended as a first exposure of Python to robotics.
         </p>
 
         <br>
 
-        <iframe src="https://youtube.com/embed/dqw7ExA5d4I" allowfullscreen></iframe>
-        <br>
-      </div>
+        <button onclick="toggle_visibility('Task_1', this)" class="expandable plus"> Task 1</button>
+        <div class="hidden btn_group" id="Task_1">
+          <p>
+            We were to implement the following prompts.<br>
 
-      <button onclick="toggle_visibility('Task_2', this)" class="expandable plus"> Task 2</button>
-      <div class="hidden btn_group" id="Task_2">
-        <p>Create a function that makes misty stop when the bumpers are detected.</p>
-        <ul>
-          <li>If the front bumpers are press make Misty swing their arms up!</li>
-          <li>If the back bumpers are pressed make Misty swing their arms down.</li>
-        </ul>
+            <br>
+            
+            Using the same “busy street” scenario, make Misty move forward for 5 seconds, turn around, wait 3 seconds, and return to
+            their starting position. As you would when crossing the road (hopefully) make sure that Misty also looks both ways when
+            crossing the road, as well as uses their arms movement at least once. Sometimes Misty will have trouble moving in one direction,
+            so if you are having trouble with Misty moving just switch directions.<br>
 
-        <br>
-        
-        <p>Create a function that makes Misty move when the head sensors are pressed and correlate the movement with an LED color.</p>
-        <ul>
-          <li>If the front sensors are pressed Misty will move forward.</li>
-          <li>If the left sensors are pressed Misty will move forward and to the left.</li>
-          <li>If the right sensors are pressed Misty will move forward and to the right.</li>
-        </ul>
+            <br>
 
-        <br>
-
-        <p>Create a function that is able to detect people.</p>
-        <ul>
-          <li>Have Misty detect people using object detection! Once Misty spots a person they should act (i.e., wave, say something, stop)</li>
-        </ul>
-
-        <br>
-
-        <iframe src="https://youtube.com/embed/3vBBuYZpZW8" allowfullscreen></iframe>
-        <br>
-      </div>
-
-      <button onclick="toggle_visibility('Task_3', this)" class="expandable plus"> Task 3</button>
-      <div class="hidden btn_group" id="Task_3">
-        <p>Write a new script (make sure you save your old one) that covers one of the following:</p>
-          <ul>
+            To the previous code you created (Misty crossing the road), we will now add a way for Misty to communicate with others and signal
+            when it is walking or stopped. In the robotics world this is the bare minimum you should implement on a robot if it is going to
+            interact with humans in any way!
+          </p>
+          <ol>
             <li>
-              Create a conversation based on a topic with Misty. You will ask someone from a different team to have a
-              conversation with your Misty, so make sure that Misty can direct the conversation. The topic is for you to decide!
+              Have Misty say something using the speak command! This can be anything you want to be creative with
+              it (school-appropriate, please!).
             </li>
+            <li>
+              Have Misty signal when it stops by displaying a red light and green when Misty is moving. You can assume that when Misty
+              is turning the LED will remain green.
+            </li>
+          </ol>
+
+          <br>
+
+          <p>
+            Now let's have Misty display a new pair of eyes that fit the scenario you put Misty in! For example, if it was Misty's
+            first time crossing the road they might be excited and happy!
+          </p>
+
+          <br>
+
+          <iframe src="https://youtube.com/embed/dqw7ExA5d4I" allowfullscreen></iframe>
+          <br>
+        </div>
+
+        <button onclick="toggle_visibility('Task_2', this)" class="expandable plus"> Task 2</button>
+        <div class="hidden btn_group" id="Task_2">
+          <p>Create a function that makes misty stop when the bumpers are detected.</p>
+          <ul>
+            <li>If the front bumpers are press make Misty swing their arms up!</li>
+            <li>If the back bumpers are pressed make Misty swing their arms down.</li>
+          </ul>
+
+          <br>
+          
+          <p>Create a function that makes Misty move when the head sensors are pressed and correlate the movement with an LED color.</p>
+          <ul>
+            <li>If the front sensors are pressed Misty will move forward.</li>
+            <li>If the left sensors are pressed Misty will move forward and to the left.</li>
+            <li>If the right sensors are pressed Misty will move forward and to the right.</li>
           </ul>
 
           <br>
 
-          <iframe src="https://youtube.com/embed/CY5rDirGx5g" allowfullscreen></iframe>
-
+          <p>Create a function that is able to detect people.</p>
           <ul>
-            <li>
-              Create a very simple/short crowd work comedy show.<br>
-              You will need a topic for your show. For example, being in college, surviving finals week. You will present
-              this show to another team, so make sure your Misty can lead towards the answers
-              you need for Misty to reply. Keep it School-appropriate, please!
-            </li>
+            <li>Have Misty detect people using object detection! Once Misty spots a person they should act (i.e., wave, say something, stop)</li>
           </ul>
-          
-        <br>
 
-        <iframe src="https://youtube.com/embed/KOIM6zTKTf8" allowfullscreen></iframe>
+          <br>
+
+          <iframe src="https://youtube.com/embed/3vBBuYZpZW8" allowfullscreen></iframe>
+          <br>
+        </div>
+
+        <button onclick="toggle_visibility('Task_3', this)" class="expandable plus"> Task 3</button>
+        <div class="hidden btn_group" id="Task_3">
+          <p>Write a new script (make sure you save your old one) that covers one of the following:</p>
+            <ul>
+              <li>
+                Create a conversation based on a topic with Misty. You will ask someone from a different team to have a
+                conversation with your Misty, so make sure that Misty can direct the conversation. The topic is for you to decide!
+              </li>
+            </ul>
+
+            <br>
+
+            <iframe src="https://youtube.com/embed/CY5rDirGx5g" allowfullscreen></iframe>
+
+            <ul>
+              <li>
+                Create a very simple/short crowd work comedy show.<br>
+                You will need a topic for your show. For example, being in college, surviving finals week. You will present
+                this show to another team, so make sure your Misty can lead towards the answers
+                you need for Misty to reply. Keep it School-appropriate, please!
+              </li>
+            </ul>
+            
+          <br>
+
+          <iframe src="https://youtube.com/embed/KOIM6zTKTf8" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   </body>
