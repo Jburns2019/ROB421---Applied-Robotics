@@ -92,16 +92,33 @@ button.expandable:hover {
     border-radius: 8px;
 }
 
+@media screen and (max-width: 600px) {
+    .plus:before {
+        content: '+';
+    }
+}
+@media screen and (min-width: 600px) {
+    .plus:before {
+        content: '\2B9A';
+    }
+}
 .plus:before {
-    content: '\2B9A';
     margin-right: 10px;
     transition: transform 0.3s ease;
 }
 
+@media screen and (max-width: 600px) {
+    .minus:before {
+        content: '-';
+    }
+}
+@media screen and (min-width: 600px) {
+    .minus:before {
+        content: '\2B9B';
+    }
+}
 .minus:before {
-    content: '\2B9B';
     margin-right: 10px;
-    /* transform: rotate(90deg); */
 }
 
 .hidden {
