@@ -64,7 +64,7 @@ ul {
 }
 
 .section {
-    width: 94%;
+    width: 96%;
     /* max-width: 1200px; */
     padding-left: 20px;
     padding-right: 20px;
@@ -75,6 +75,9 @@ ul {
 }
 
 .section .section {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 0;
     border-color: var(--embedded_color);
 } 
 
