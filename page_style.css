@@ -3,7 +3,8 @@
     --title_color: #ff4757;
     --text_color: #dcdde1;
     --hyper_color: #f39c12;
-    --embedded_color: #05e4d9;
+    --embeded_section_color: #05e4d9;
+    --doubly_embeded_section_color: #a505e4;
     --active_button_color: #ff4757;
     --active_button_bg_color: #2f3640;
 }
@@ -74,7 +75,11 @@ ul {
     margin-top: 2px;
     margin-bottom: 2px;
     padding: 0;
-    border-color: var(--embedded_color);
+    border-color: var(--embeded_section_color);
+}
+
+.section .section .section {
+    border-color: var(--doubly_embeded_section_color);
 } 
 
 .section p, .section ol, .section ul {
@@ -139,17 +144,16 @@ button.expandable:hover {
     list-style-type: lower-alpha;
 }
 
-img {
+img, .small_img {
     width: 100%;
     height: auto;
-}
-
-.small-image {
-    width: 50%; 
-    height: auto; 
-    display: block; 
+    display: block;
     margin-left: auto; 
     margin-right: auto; 
+}
+
+.small_img {
+    width: 10%;
 }
 
 iframe, video {
