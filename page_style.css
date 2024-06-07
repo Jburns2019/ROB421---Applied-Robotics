@@ -44,6 +44,17 @@ a {
     margin-left: 10px;
     transition: color 0.3s ease;
 }
+.links, .other_links {
+    display: inline-block;
+    border-radius: 8px;
+    border: 2px solid var(--hyper_color);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.other_links {
+    margin: 0
+}
 
 .section a {
     margin-left: 0;
