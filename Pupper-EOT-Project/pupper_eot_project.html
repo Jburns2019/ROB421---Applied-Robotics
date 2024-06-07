@@ -190,7 +190,10 @@
                 <div class="section">
                     <button onclick="toggle_visibility('final_presentation', this)" class="expandable plus"> Presentation</button>
                     <div class="hidden btn_group" id="final_presentation">
-                        <p>The final project update.</p>
+                        <p>
+                            The presentation shown below is the last update on the project done before the class. As such there is reflective content with a bent toward finality. Any further work
+                            was optional.
+                        </p>
                         <object data="Final Project Update.pdf" type="application/pdf" width="100%" height="500"></object>
                     </div>
                 </div>
@@ -244,8 +247,85 @@
                             <br>
 
                             Callen Sun (a developer at MangDang) had published a new readme as well as some cleanup for some of the launch files the morning of this thought process. In that
-                            updated readme was a method for converting an occupancy to a .pgm (a file).
+                            updated readme was a method for converting an occupancy to a .pgm (a file). Pgm files can be read trivially by imageio. John worked with them in ROB 456 for
+                            simulated pathfinding. The following methods would be needed to bridge the gap between what ros2 and our full project description.
                         </p>
+                        <ul>
+                            <li>take_snapshot, create an occupancy grid image of the environment using ros.</li>
+                            <li>where_am_i, where is the pupper in the room base on the newest snapshot.</li>
+                            <li>where_is_good, where should the pupper go next to ensure full exploration.</li>
+                            <li>get_path, find a pixel path from the robots location to a goal location.</li>
+                            <li>move, turn a path into a series of commands. As movement is toggled rather than held, commands should be direction and then duration.</li>
+                            <li>get_completion_rate, based on an overall map, what percent has been explored.</li>
+                        </ul>
+                        <p>
+                            There were some caviots that needed to be addressed early. If any of the following were not to work the idea would need to be rethought.
+                        </p>
+                        <ol>
+                            <li>
+                                A python program must be able to reasonably launch the ros slam program (which runs indefinitely) and then stop it after it has created a satisfactory
+                                occupancy grid.
+                            </li>
+                            <li>The program must be able to tell where the pupper is from the lidar.</li>
+                            <li>
+                                Movement of the pupper must be consistant enough that drift won't cause major descrepencies between the map and the pupper. We're not using
+                                dead reckoning, but we don't want localization to be impossible.
+                            </li>
+                        </ol>
+                        <p>
+                            John tackled the first problem immidiately. It turns out that subprocessing.Popen opens its own terminals. Since each terminal is unique, commands like jobs and kill %1
+                            will not work. Luckily launching popen is a threaded process and therfore I can use things like wait and time.sleep to ensure the criteria I am looking for in the external
+                            program are met.<br>
+
+                            <br>
+
+                            As exhilarating as problem one was to solve, problem two was in a class of its own. Problem two was as beautiful in its simplicity as it was in its aesthetic.
+                        </p>
+                        <img src="Lidar_Image.jpg" class="medium_img">
+                        <p>
+                            There is a map.yaml file, but without an imu, the cordinates for the pupper are incorrect (even when standing still). Fortunately a common artifact of lidars are the
+                            diagonals that appear to point toward the pupper (as that's where the lasers originated).
+                        </p>
+                        <img src="Lidar_Grouped_Dots.jpg" class="medium_img">
+                        <p>
+                            If the region between free space and unknown is converted into groups the groups could be colored unique colors to make them human readible.
+                        </p>
+                        <img src="Lidar_Grouped_Dot_Lines.jpg" class="medium_img">
+                        <p>
+                            Larger groups could then be converted into lines.
+                        </p>
+                        <img src="Lidar_Grouped_Dot_Line_Intersections.jpg" class="medium_img">
+                        <p>
+                            Given the beginning and the end, m and b can be calculated for y=mx+b. If the map is stepped through at small enough x steps every intersection can be found. The average
+                            of the intersections should be the robot position (marked by the red cross shown in all 4 images). Unfortunately this is not perfect. Boring torain can cause fewer lines.
+                            Worse, a small area may result in no lines, which would result in no pupper location.<br>
+                        </p>
+
+                        <br>
+
+                        <p>
+                            Finally, the third problem was actually not an issue. A couple weeks ago Afreez (developer at Mangdang) had suggested lowering the pupper to lower the center of mass.
+                            This resulted in less ground kicking and a lower chance of tipping over.<br>
+                        </p>
+
+                        <br>
+
+                        <p>
+                            The observant reader will notice that by solving these problems take_snapshot and part of where_am_i were solved above. Finding where the pupper is in a lidar reading is only
+                            part of the answer. The next step would be to use the landmarks and expected location to match up with the rest of the room's map. Fortunately, for demo 2 (pathfind to a
+                            selected location) we only needed a single lidar scan. where_is_good and get_path were able to be easily modified for our lidar maps. Now that all of these pieces were together,
+                            we combined them in the teleop_twist_keyboard which controls the movement of the pupper via keyboard. John added a space button and a g button so that the keyboard kept
+                            part of its original functionality. Tapping space results in a snapshot and g says to go toward a targeted location. Some measured runs were used to calculate unit conversion.
+                        </p>
+                        <ul>
+                            <li>3 feet/20 pixels</li>
+                            <li>3 feet/10.96 seconds</li>
+                            <li>720 degrees/29.33 seconds</li>
+                            <li>360 degrees/14.88 seconds</li>
+                        </ul>
+                        <p>The culmination of this work resulted in the video below.</p>
+                        <iframe src="https://youtube.com/embed/kvn6AokmaWs" allowfullscreen></iframe>
+                        <p>Note this is the same video shown in the previous tab.</p>
                     </div>
                 </div>
             </div>

@@ -144,7 +144,7 @@ button.expandable:hover {
     list-style-type: lower-alpha;
 }
 
-img, .small_img {
+img, .small_img, .medium_img {
     width: 100%;
     height: auto;
     display: block;
@@ -154,6 +154,10 @@ img, .small_img {
 
 .small_img {
     width: 10%;
+}
+
+.medium_img {
+    width: 30%;
 }
 
 iframe, video {
