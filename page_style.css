@@ -51,7 +51,6 @@ a {
     padding-left: 5px;
     padding-right: 5px;
 }
-
 .other_links {
     margin: 0
 }
@@ -155,20 +154,26 @@ button.expandable:hover {
     list-style-type: lower-alpha;
 }
 
-img, .small_img, .medium_img {
+img {
     width: 100%;
     height: auto;
     display: block;
-    margin-left: auto; 
-    margin-right: auto; 
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
 }
-
 .small_img {
     width: 10%;
 }
-
 .medium_img {
     width: 30%;
+}
+.side_by_side {
+    display: inline-block;
+    width: 30%;
+}
+div img:first-child {
+    margin-left: 5%;
 }
 
 iframe, video {

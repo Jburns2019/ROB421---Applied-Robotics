@@ -334,6 +334,63 @@
                 </div>
             </div>
         </div>
+
+        <div class="section">
+            <button onclick="toggle_visibility('Final_Submission', this)" class="expandable plus">Final Submission (June 12, 2024)</button>
+            <div class="hidden btn_group" id="Final_Submission">
+                <p>
+                    After presenting the last update we were given the option to either keep working on whatever was left or to turn in our hardware
+                    and leave progress toward the goal as is. As our group was so close to a proof of concept, we decided to hang onto the hardware for a little bit longer.<br>
+                </p>
+
+                <p>
+                    Noting that our lidar was working we decided to try to see if we could take lidar scans as we move through a "room" and then combine them. The smallest most reasonable
+                    case for this was a hallway.
+                </p>
+
+                <img src="Actual Hallway.jpg" class="medium_img">
+
+                <p>Boards were placed at the entrance and exit then all doors were closed. This simulates the case that the pupper completely explores an area.<br></p>
+                <p>Once the area was ready, 2 terminals were setup.</p>
+                <ul>
+                    <li>ros2 launch mini_pupper_bringup bringup.launch.py</li>
+                    <li>ros2 run teleop_twist_keyboard teleop_twist_keyboard</li>
+                </ul>
+                <p>The following steps were taken to clean up the setup.</p>
+                <ul>
+                    <li>Added . ~/ros2_ws/install/setup.bash to the .profile file. This makes it so we never have to source in order to run the ros commands.</li>
+                    <li>bringup.launch.py was unsubscribed from the faux imu and simulated lidar and subscribed to the ld06 lidar topic.</li>
+                    <li>slam.rviz was modified to remove the faux imu and tf and to add colorfull lidar scans.</li>
+                </ul>
+                <p>
+                    Below the pupper is moving from the bottom of the hallway to the top of the hallway.
+                </p>
+
+                <div>
+                    <img src="map1.png" class="side_by_side">
+                    <img src="map2.png" class="side_by_side">
+                    <img src="map3.png" class="side_by_side">
+                </div>
+
+                <div>
+                    <img src="map4.png" class="side_by_side">
+                    <img src="map5.png" class="side_by_side">
+                    <img src="map6.png" class="side_by_side">
+                </div>
+
+                <p>Once the pupper finished its rounds, the lidar maps were combined into the final image.</p>
+                <img src="overall_maps.png" class="medium_img">
+                <p>
+                    With the simplist case of the wall the size of the lidar scan does not vary much. This means that walls from all images can just be plotted
+                    and a fairly reasonable image can be generated. However if rotation occured, the room was bigger than the scan field, or a wall was ever hidden, this method would not work.
+                    Due to time and lack of necessity we decided to stop here.<br>
+
+                    <br>
+
+                    It should be noted that the above combined image was done in post processing rather than algorithmically on the fly.
+                </p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
