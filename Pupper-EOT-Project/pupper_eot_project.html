@@ -58,7 +58,8 @@
                     <button onclick="toggle_visibility('proposal_videos', this)" class="expandable plus">Videos and Background</button>
                     <div class="hidden btn_group" id="proposal_videos">
                         <p>
-                            Below are some videos related to our proposal.
+                            Below are some videos related to our proposal. MangDang's setup and commands can be found in the readme of their
+                            <a href="https://github.com/mangdangroboticsclub/mini_pupper_ros">ros repository</a>.
                         </p>
 
                         <p>
@@ -112,7 +113,9 @@
                     <button onclick="toggle_visibility('videos_0', this)" class="expandable plus">Update Videos and Background</button>
                     <div class="hidden btn_group" id="videos_0">
                         <p>
-                            Below are some update videos showcasing our progress.
+                            Below are some update videos showcasing our progress. Most of these require an edit to the teleop_twist_keyboard. The file can be found at
+                            /opt/ros/humble/lib/python3.10/site-packages/teleop_twist_keyboard.py. Edits to this file will be reflected when using the
+                            `ros2 run teleop_twist_keyboard teleop_twist_keyboard` command.
                         </p>
 
                         <p>
