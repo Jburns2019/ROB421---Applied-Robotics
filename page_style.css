@@ -58,6 +58,9 @@ a {
 .section a {
     margin-left: 0;
 }
+p a {
+    margin-left: 0;
+}
 
 a:hover {
     color: var(--active_button_color);
