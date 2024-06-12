@@ -27,21 +27,27 @@
     <h2>PupMappers</h2>
     <div class="section">
         <p>
-            Our final project is focused on using the Mini Pupper robot to implement SLAM (Simultaneous Localization and Mapping). The goal is to enable the robot to autonomously navigate and map its environment, enhancing its capability to perform complex tasks. Below, you'll find detailed information about our proposal, demo videos, and updates on our progress.
+            Our final project was focused on using MandDang's Mini Pupper 1 to implement SLAM (Simultaneous Localization and Mapping). The goal was to enable the robot to
+            autonomously navigate and map its environment, enhancing its capability to perform complex tasks. Below, you'll find detailed information about our proposal, demo videos,
+            updates on our progress, and our final results.
         </p>
 
         <div class="section">
             <button onclick="toggle_visibility('Proposal', this)" class="expandable plus">Proposal (May 7, 2024)</button>
             <div class="hidden btn_group" id="Proposal">
                 <p>
-                    Our final project proposal is to use the Mini Pupper robot to map a room using SLAM. Mapping and localization is an important problem to solve for many robotic systems. Giving the Mini Pupper the ability to localize itself and map its surroundings would further its capabilities of performing more complicated tasks autonomously.
+                    Below you will find the proposal that was made. Mapping and localization is an important problem to solve for many robotic systems.
+                    Giving the Mini Pupper the ability to localize itself and map its surroundings would further its capabilities of performing more complicated tasks autonomously.
+                    Additionally it has many complex components what would and did offer great learning opportunities.
                 </p>
 
                 <div class="section">
                     <button onclick="toggle_visibility('proposal_presentation', this)" class="expandable plus">Presentation</button>
                     <div class="hidden btn_group" id="proposal_presentation">
                         <p>
-                            We gave a presentation intended to pitch our idea to our professor and to further investigate the tools we intend to use for the project. We've decided on the Mini Pupper robot for our SLAM system. We are using ROS to give us more SLAM capabilities and access to twist commands for more accurate robot movement. For hardware, we are using a innomaker LiDAR unit and the existing servos on the Pupper. Rviz is used to visualize the LiDAR data.
+                            We gave a presentation intended to pitch our idea to our professor and to further investigate the tools we intend to use for the project. We decided
+                            on the Mini Pupper robot for our SLAM system. We used ROS as a starting point. MangDang's ROS2 setup has built in SLAM and twist commands for more accurate robot movement.
+                            For hardware, we used the LD06 LiDAR unit and the existing servos on the Pupper. Rviz was used to visualize the LiDAR data.
                         </p>
                         
                         <object data="Project Pitch.pdf" type="application/pdf" width="100%" height="500"></object>
@@ -52,25 +58,31 @@
                     <button onclick="toggle_visibility('proposal_videos', this)" class="expandable plus">Videos and Background</button>
                     <div class="hidden btn_group" id="proposal_videos">
                         <p>
-                            Here are some videos related to our proposal:
+                            Below are some videos related to our proposal.
                         </p>
 
                         <p>
-                            This video demonstrates the keyboard simulation for the Mini Pupper. In this simulation, we show how the keyboard can be used to control the Mini Pupper's movements, which is essential for our mapping tasks. We utilize RViz as part of the simulation to visualize the LiDAR data and ensure accurate mapping of the room. This setup allows us to manually guide the Mini Pupper through the environment, collecting data for the SLAM system to create a detailed map.<br>
+                            Starting into the slam project with MangDang's ros setup was built upon the preface that their setup was already handling the movement. The video below demonstrated
+                            that the keyboard simulation moves the pupper atleast in simulation. In this simulation, we show how the keyboard can be used to control the Mini Pupper's movements,
+                            which is essential for our mapping tasks. We utilize RViz as part of the simulation to visualize the LiDAR data and ensure accurate mapping of the room.
+                            This setup allows us to manually guide the Mini Pupper through the environment, collecting data for the SLAM system to create a detailed map.<br>
                         </p>
                         <iframe src="https://youtube.com/embed/X7Mf_iLr0XE" allowfullscreen></iframe>
                         
                         <br>
 
                         <p>
-                            This video showcases our ability to map a simulation environment for the Mini Pupper. Using ROS 2 and Gazebo, which is a robot simulation environment, we were able to interact with and control the Mini Pupper. Gazebo can be used independently or integrated with ROS 2 using a set of packages. In this simulation, we utilized keyboard commands embedded within ROS 2 to control the robot and map its surroundings. The visualized map is displayed using RViz, demonstrating our progress in achieving accurate mapping through simulation.<br>
+                            The second preface to using MangDang's ros setup was that they had a working version of slam (in simulation). This video showcases the capacity to test the pupper in simulaiton.
+                            Using ROS 2 and Gazebo, which is a robot simulation environment, we were able to interact with and control the Mini Pupper. Gazebo can be used independently or integrated
+                            with ROS 2 using a set of packages. In this simulation, we utilized keyboard commands embedded within ROS 2 to control the robot and map its surroundings.
+                            The visualized map is displayed using RViz, demonstrating our progress in achieving accurate mapping through simulation.<br>
                         </p>
                         <iframe src="https://youtube.com/embed/VzPBjBh2btA" allowfullscreen></iframe>
                         
                         <br>
 
                         <p>
-                            This video was created for fun to demonstrate the Mini Pupper running in circles. Using RViz, we recorded the simulation of the Mini Pupper executing circular movements. Once completed, we put the robot into a continuous loop, showcasing its ability to perform repetitive tasks accurately within the simulated environment. For fun, we used it as a loading screen.<br>
+                            The last video was more of a fun slide element. The video shows the Mini Pupper running in circles, which looks very similar to a loading screen.<br>
                         </p>
                         <iframe src="https://youtube.com/embed/1fWf68K62EI" allowfullscreen></iframe>
                     </div>
@@ -82,7 +94,8 @@
             <button onclick="toggle_visibility('Demo_0', this)" class="expandable plus">Hello World Demo (May 16, 2024)</button>
             <div class="hidden btn_group" id="Demo_0">
                 <p>
-                    Our initial demo involved setting up the Mini Pupper and running a simple "Hello World" program to ensure all components were functioning correctly.
+                    Our initial demo involved setting up the Mini Pupper and running a simple "Hello World" program to ensure all components were functioning correctly. It would be accurate
+                    to describe this as the first real life interaction the pupper had toward its goal.
                 </p>
 
                 <div class="section">
@@ -99,15 +112,16 @@
                     <button onclick="toggle_visibility('videos_0', this)" class="expandable plus">Update Videos and Background</button>
                     <div class="hidden btn_group" id="videos_0">
                         <p>
-                            Here are some update videos showcasing our progress:
+                            Below are some update videos showcasing our progress.
                         </p>
 
                         <p>
-                            This video demonstrates the keyboard simulation on the Mini Pupper. In this simulation, we show how the keyboard can be used to control the Mini Pupper's movements, which is essential for our mapping tasks. This setup allows us to manually guide the Mini Pupper through the environment, collecting data for the SLAM system to create a detailed map.<br>
+                            This video demonstrates the keyboard commands on the actual Mini Pupper. In this demo, we show how the keyboard can be used to control the Mini Pupper's
+                            movements, which is essential for our mapping tasks. This setup allows us to manually guide the Mini Pupper through the environment, collecting data for the SLAM
+                            system to create a detailed map.<br>
                         </p>
                         <iframe src="https://youtube.com/embed/d-B7l_8jRX8" allowfullscreen></iframe>
                         
-
                         <br>
 
                         <p>
@@ -126,7 +140,7 @@
                         </p>
                         <iframe src="https://youtube.com/embed/PcCbTTpzA0U" allowfullscreen></iframe>
                         <p>
-                            It should be noted that the video is running at 2x speed for compression and reader retension.<br>
+                            It should be noted that the video is running at 2x speed for compression and reader retension.
                         </p>
 
                         <br>
@@ -142,28 +156,42 @@
                         <br>
 
                         <p>
-                            This artifact was used to further the team's end-of-term project. Using the ROS 2 repository with the Mini Pupper, the team used a provided program. The team's goal with the project was to generate a map using SLAM on the Mini Pupper. This potentially enhanced the movement of the Mini Pupper, introducing more movements for each servo of the robot. The Mini Pupper performed a series of movements and created a dance routine along with a song. This artifact uses Colcon build to rebuild new packages of ROS 2.<br>
+                            Using the ROS 2 repository with the Mini Pupper, the team used a provided program. The team's goal with the project was to generate a map using SLAM on the Mini Pupper.
+                            Though tangential moving to the beat of music is a fun exploration of the software available using ros 2. It also explored package editing (colcon build) which would be an integral part
+                            of the project.introducing more movements for each servo of the robot.<br>
                         </p>
                         <iframe src="https://youtube.com/embed/ZGS4t3Fdrqw" allowfullscreen></iframe>
                         
                         <br>
 
                         <p>
-                            This artifact was used to further the team's end of term project. Using ROS2 repository with the Mini Pupper had the team use a provided program to manually control the robot using a computer keyboard. The team's goal with the project was to generate a map using SLAM on the pupper. This would potentially require the pupper to turn a certain amount. The artifact had modified that provided code to turn the Mini Pupper 90 degrees in either the clockwise or counter directions. This will better enable the team to move the robot and generate SLAM maps. Leading the team forward to attempt developing autonomous movement to generate additional area maps.<br>
+                            Using the ROS2 repository with the Mini Pupper had the team use a provided program to manually control the robot using a computer keyboard.
+                            The team's goal with the project was to generate a map using SLAM on the pupper. This would potentially require the pupper to turn a certain amount.
+                            The artifact had modified that provided code to turn the Mini Pupper 90 degrees in either the clockwise or counter directions.
+                            This will better enable the team to move the robot and generate SLAM maps. Leading the team forward to attempt developing autonomous movement to generate
+                            additional area maps.<br>
                         </p>
                         <iframe src="https://youtube.com/embed/jxYhrxGIf5A" allowfullscreen></iframe>
                         
                         <br>
 
                         <p>
-                            My goal for this project was to figure out how to efficiently move and turn the Mini Pupper after the recent update to run it using ROS. Based on a movement program for twist commands in the existing Mini Pupper ROS repository, I created my own that had the robot move forward, turn 180 degrees, and then return to its starting position. The robot was fairly stable and consistent going forward, but I did have some difficulty turning the robot exactly 180 degrees as is apparent in the video. I found there was a decent amount of variability in how much the Mini Pupper would turn each time while running the same program. I hope to be able to develop a more robust system for turning later on.<br>
+                            My goal for this project was to figure out how to efficiently move and turn the Mini Pupper after the recent update to run it using ROS. Based on a movement program
+                            for twist commands in the existing Mini Pupper ROS repository, I created my own that had the robot move forward, turn 180 degrees, and then return to its starting position.
+                            The robot was fairly stable and consistent going forward, but I did have some difficulty turning the robot exactly 180 degrees as is apparent in the video.
+                            I found there was a decent amount of variability in how much the Mini Pupper would turn each time while running the same program. I hope to be able to develop a more
+                            robust system for turning later on.<br>
                         </p>
                         <iframe src="https://youtube.com/embed/3EvsSjVtG7w" allowfullscreen></iframe>
                         
                         <br>
 
                         <p>
-                            This video demonstrates the LiDAR module in ROS 2. The Mini Pupper is mounted with a MANGDANG STL-06P LiDAR module, which performs well as intended. The LiDAR system uses laser pulses to measure distances to surrounding objects, creating a detailed 2D map of the environment. The video shows lines of different colors signifying various objects detected by the LiDAR. The darker the color, the more likely it is recognized as a solid object. This color coding helps in distinguishing between different types of objects and understanding their solidity. The LiDAR data is visualized in RViz, a 2D visualization tool for ROS, which allows us to see the environment from the robot's perspective and ensures accurate mapping and obstacle detection.<br>
+                            This video demonstrates the LiDAR module in ROS 2. The Mini Pupper is mounted with a MANGDANG STL-06P LiDAR module, which performs well as intended.
+                            The LiDAR system uses laser pulses to measure distances to surrounding objects, creating a detailed 2D map of the environment. The video shows lines of
+                            different colors signifying various objects detected by the LiDAR. The darker the color, the more likely it is recognized as a solid object. This color coding
+                            helps in distinguishing between different types of objects and understanding their solidity. The LiDAR data is visualized in RViz, a 2D visualization tool for ROS,
+                            which allows us to see the environment from the robot's perspective and ensures accurate mapping and obstacle detection.<br>
                         </p>
                         <iframe src="https://youtube.com/embed/Bpg9jhSw23E" allowfullscreen></iframe>
                     </div>
@@ -188,7 +216,8 @@
             <button onclick="toggle_visibility('Demo_2', this)" class="expandable plus">Update Demo 2 (May 30, 2024)</button>
             <div class="hidden btn_group" id="Demo_2">
                 <p>
-                    Our final demo showcases the complete implementation of the SLAM system on the Mini Pupper, including navigation.<br>
+                    Our final in class demo showcases an implementation of the SLAM system on the Mini Pupper, including semi-naive navigation. This technically meats the requirement of demo 2,
+                    but our team was not quite satisfied with the overall results (which is why we took the opportunity we were given to continue working on the pupper into finals week).<br>
                 </p>
                 
                 <div class="section">
@@ -196,7 +225,7 @@
                     <div class="hidden btn_group" id="final_presentation">
                         <p>
                             The presentation shown below is the last update on the project done before the class. As such there is reflective content with a bent toward finality. Any further work
-                            was optional.
+                            was optional. Especially since even with a 0 on our final turn in, would still result in all of us getting an A in the course.
                         </p>
                         <object data="Final Project Update.pdf" type="application/pdf" width="100%" height="500"></object>
                     </div>
@@ -234,7 +263,7 @@
 
                         <p>
                             Regardless of the setbacks, the 4 days that led up to this video were insane. A ton of effort and brainstorming was put in to find clever out of the box ways of circumventing our lack of
-                            ros2 knowledge, challenges the pupper put up, and how to make something presentable so we could finish the assignment. Luckily after spending most of the term working on ros2 a method clicked
+                            ros2 knowledge, challenges the pupper put up, and how to make something presentable so we could finish the assignment. Luckily after spending most of the term working on ros 2 a method clicked
                             and all that was left was to just do it. We found the problems and tackled them one by one.
                         </p>
                     </div>
